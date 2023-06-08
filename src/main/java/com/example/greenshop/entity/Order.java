@@ -20,6 +20,4 @@ public class Order {
     @ManyToOne
     private Product product;
 
-
-
 }

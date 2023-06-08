@@ -4,8 +4,6 @@ package com.example.greenshop.entity;
 import jakarta.persistence.*;
 import lombok.Data;
 
-import javax.management.relation.Role;
-
 @Entity
 @Data
 @Table(name = "user")
