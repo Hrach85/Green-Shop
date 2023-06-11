@@ -1,9 +1,9 @@
-package com.example.greenshop.servise.impl;
+package com.example.greenshop.service.impl;
 
 import com.example.greenshop.entity.Product;
 import com.example.greenshop.entity.User;
 import com.example.greenshop.repository.ProductRepository;
-import com.example.greenshop.servise.ProductService;
+import com.example.greenshop.service.ProductService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;

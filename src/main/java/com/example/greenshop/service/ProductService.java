@@ -1,4 +1,4 @@
-package com.example.greenshop.servise;
+package com.example.greenshop.service;
 
 import com.example.greenshop.entity.Product;
 import com.example.greenshop.entity.User;
