@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>register</title>
+</head>
+<body>
+<div th:if="${currentUser!= null}">Welcome <b th:text="${currentUser .name}"></b> <br>
+    <a href="/logout"> Logout</a>
+</div>
+<form action="/user/register" method="post">
+    name:<input type="text" name="name"><br>
+    surname:<input type="text" name="surname"><br>
+    phone:<input type="text" name="phone"><br>
+    email:<input type="text" name="email"><br>
+    house:<input type="text" name="house"><br>
+    street:<input type="text" name="street"><br>
+    city:<input type="text" name="city"><br>
+    postal_code:<input type="text" name="postal_code"><br>
+    country:<input type="text" name="country"><br>
+    password<input type="password" name="password"><br>
+    <input type="submit" value="register">
+</form>
+
+</body>
+</html>
