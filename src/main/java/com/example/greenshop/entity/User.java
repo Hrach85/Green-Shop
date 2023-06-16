@@ -19,10 +19,10 @@ public class User {
     private String phone;
     @Enumerated(EnumType.STRING)
     private Role role;
-
     private String house;
     private String street;
     private String city;
+    @Column(name = "postal_code")
     private String postalCode;
 
 }
