@@ -33,7 +33,6 @@ public class ProductController {
         } else {
             return "redirect:/products";
         }
-
     }
 
     @GetMapping
@@ -43,11 +42,13 @@ public class ProductController {
         modelMap.addAttribute("categories", categoryService.findCategories());
         return "products";
     }
+
     @GetMapping("/add")
     public String productsAddPage(ModelMap modelMap) {
         modelMap.addAttribute("categories", categoryService.findCategories());
         return "addProducts";
     }
+
     @PostMapping("/add")
     public String productsAdd(@ModelAttribute Product product,
                               @RequestParam("image") MultipartFile multipartFile,
@@ -55,10 +56,20 @@ public class ProductController {
         productService.addProduct(currentUser.getUser(), multipartFile, product);
         return "redirect:/products";
     }
+
     @GetMapping("/remove")
     public String removeProduct(@RequestParam("id") int id) {
         productService.deleteById(id);
         return "redirect:/products";
     }
+
+    @PostMapping("/update")
+    public String productsUpdate(@ModelAttribute Product product,
+                                 @RequestParam("image") MultipartFile multipartFile,
+                                 @AuthenticationPrincipal CurrentUser currentUser) throws IOException {
+        productService.updateProduct(currentUser.getUser(), multipartFile, product);
+        return "redirect:/products";
+    }
+
 }
 

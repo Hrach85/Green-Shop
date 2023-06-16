@@ -13,6 +13,6 @@ public interface ProductService {
     Optional<Product> findById(int id);
     void addProduct(User currentUser, MultipartFile multipartFile, Product product) throws IOException;
     void deleteById(int id);
-
+    public void updateProduct(User currentUser, MultipartFile multipartFile, Product product) throws IOException;
 
 }
