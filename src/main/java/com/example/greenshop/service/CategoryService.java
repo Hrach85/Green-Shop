@@ -13,6 +13,7 @@ public interface CategoryService {
     void addCategory(Category category) throws IOException;
 
     void deleteById(int id);
+    public void updateCategory(Category category);
 
 
 }

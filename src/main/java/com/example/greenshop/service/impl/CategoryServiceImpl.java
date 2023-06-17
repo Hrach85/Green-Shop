@@ -36,4 +36,10 @@ public class CategoryServiceImpl implements CategoryService {
     public void deleteById(int id) {
         categoryRepository.deleteById(id);
     }
+
+    @Override
+    public void updateCategory(Category category) {
+        categoryRepository.save(category);
+    }
+
 }
