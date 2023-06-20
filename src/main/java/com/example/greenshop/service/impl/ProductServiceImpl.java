@@ -1,7 +1,12 @@
 package com.example.greenshop.service.impl;
 
+import com.example.greenshop.dto.productDto.CreateProductRequestDto;
+import com.example.greenshop.dto.productDto.ProductDto;
+import com.example.greenshop.dto.productDto.UpdateProductRequestDto;
 import com.example.greenshop.entity.Product;
 import com.example.greenshop.entity.User;
+import com.example.greenshop.mapper.CategoryMapper;
+import com.example.greenshop.mapper.ProductMapper;
 import com.example.greenshop.repository.ProductRepository;
 import com.example.greenshop.service.ProductService;
 import lombok.RequiredArgsConstructor;
@@ -11,6 +16,7 @@ import org.springframework.web.multipart.MultipartFile;
 
 import java.io.File;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
@@ -22,11 +28,19 @@ public class ProductServiceImpl implements ProductService {
     private String imageUploadPath;
 
     private final ProductRepository productRepository;
+    private final ProductMapper productMapper;
+    private final CategoryMapper categoryMapper;
 
     @Override
-    public List<Product> findProducts() {
+    public List<ProductDto> findProducts() {
         List<Product> products = productRepository.findAll();
-        return products;
+        List<ProductDto> productDtos = new ArrayList<>();
+        for (Product product : products) {
+            ProductDto productDto = productMapper.mapToDto(product);
+            productDto.setCategoryDto(categoryMapper.mapToDto(product.getCategory()));
+            productDtos.add(productDto);
+        }
+        return productDtos;
     }
 
     @Override
@@ -35,14 +49,14 @@ public class ProductServiceImpl implements ProductService {
     }
 
     @Override
-    public void addProduct(User currentUser, MultipartFile multipartFile, Product product) throws IOException {
+    public void addProduct(User currentUser, MultipartFile multipartFile, CreateProductRequestDto createProductRequestDto) throws IOException {
         if (multipartFile != null && !multipartFile.isEmpty()) {
             String fileName = System.nanoTime() + "_" + multipartFile.getOriginalFilename();
             File file = new File(imageUploadPath + fileName);
             multipartFile.transferTo(file);
-            product.setImage(fileName);
+            createProductRequestDto.setImage(fileName);
         }
-        productRepository.save(product);
+        productRepository.save(productMapper.map(createProductRequestDto));
     }
 
     @Override
@@ -51,8 +65,8 @@ public class ProductServiceImpl implements ProductService {
     }
 
     @Override
-    public void updateProduct(User currentUser, MultipartFile multipartFile, Product product) throws IOException {
-
+    public void updateProduct(User currentUser, MultipartFile multipartFile, UpdateProductRequestDto updateProductRequestDto) throws IOException {
+        Product product = productMapper.updateDto(updateProductRequestDto);
         Optional<Product> existingProductOptional = productRepository.findById(product.getId());
 
         if (existingProductOptional.isPresent()) {
@@ -71,6 +85,13 @@ public class ProductServiceImpl implements ProductService {
             }
             productRepository.saveAndFlush(existingProduct);
         }
+
+    }
+    public ProductDto singleProduct(int id){
+        Optional<Product> byId = productRepository.findById(id);
+        if (byId.isPresent()) {
+            return productMapper.mapToDto(byId.get());
+        }return null;
 
     }
 

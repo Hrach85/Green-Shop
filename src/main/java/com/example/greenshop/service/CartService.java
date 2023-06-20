@@ -1,5 +1,6 @@
 package com.example.greenshop.service;
 
+import com.example.greenshop.dto.cartDto.CartDto;
 import com.example.greenshop.entity.Cart;
 import com.example.greenshop.entity.User;
 import com.example.greenshop.security.CurrentUser;
@@ -20,7 +21,7 @@ public interface CartService {
 
     public void updateCart(Cart cart);
 
-    public List<Cart> findCartsByUser(User user);
+    public List<CartDto> findCartsByUser(User user);
 
     public void updateCartByCurrentUser(int userId, int newQuantity,int cartId);
 

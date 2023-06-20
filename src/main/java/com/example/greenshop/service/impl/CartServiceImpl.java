@@ -1,9 +1,13 @@
 package com.example.greenshop.service.impl;
 
+import com.example.greenshop.dto.cartDto.CartDto;
 import com.example.greenshop.entity.Cart;
 import com.example.greenshop.entity.Product;
 import com.example.greenshop.entity.Role;
 import com.example.greenshop.entity.User;
+import com.example.greenshop.mapper.CartMapper;
+import com.example.greenshop.mapper.ProductMapper;
+import com.example.greenshop.mapper.UserMapper;
 import com.example.greenshop.repository.CartRepository;
 import com.example.greenshop.repository.ProductRepository;
 import com.example.greenshop.security.CurrentUser;
@@ -12,6 +16,7 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
@@ -22,6 +27,9 @@ public class CartServiceImpl implements CartService {
 
     private final CartRepository cartRepository;
     private final ProductRepository productRepository;
+    private final CartMapper cartMapper;
+    private final UserMapper userMapper;
+    private final ProductMapper productMapper;
 
     @Override
     public List<Cart> findCarts(User user) {
@@ -63,14 +71,26 @@ public class CartServiceImpl implements CartService {
     }
 
     @Override
-    public List<Cart> findCartsByUser(User user) {
+    public List<CartDto> findCartsByUser(User user) {
         List<Cart> carts;
+        List<CartDto> cartDtos = new ArrayList<>();
         if (user.getRole() == Role.ADMIN) {
             carts = cartRepository.findAll();
+            for (Cart cart : carts) {
+                CartDto cartDto = cartMapper.mapToDto(cart);
+                cartDto.setUserDto(userMapper.mapToDto(cart.getUser()));
+                cartDto.setProductDto(productMapper.mapToDto(cart.getProduct()));
+                cartDtos.add(cartDto);
+            }
         } else {
             carts = cartRepository.findAllByUserId(user.getId());
+            for (Cart cart : carts) {
+                CartDto cartDto = cartMapper.mapToDto(cart);
+                cartDto.setUserDto(userMapper.mapToDto(cart.getUser()));
+                cartDto.setProductDto(productMapper.mapToDto(cart.getProduct()));
+                cartDtos.add(cartDto);}
         }
-        return carts;
+        return cartDtos;
     }
 
     @Override
@@ -96,4 +116,5 @@ public class CartServiceImpl implements CartService {
         }
         return productPriceTotal;
     }
+
 }

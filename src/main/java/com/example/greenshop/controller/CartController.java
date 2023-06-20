@@ -1,7 +1,6 @@
 package com.example.greenshop.controller;
 
-import com.example.greenshop.entity.Cart;
-import com.example.greenshop.entity.Product;
+import com.example.greenshop.dto.cartDto.CartDto;
 import com.example.greenshop.entity.User;
 import com.example.greenshop.security.CurrentUser;
 import com.example.greenshop.service.CartService;
@@ -11,11 +10,13 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import java.io.IOException;
 import java.util.List;
-import java.util.Optional;
 
 @Controller
 @RequestMapping("/cart")
@@ -53,9 +54,8 @@ public class CartController {
     public String cartPage(ModelMap modelMap,
                            @AuthenticationPrincipal CurrentUser currentUser) {
         User user = currentUser.getUser();
-        List<Cart> carts = cartService.findCartsByUser(user);
+        List<CartDto> carts = cartService.findCartsByUser(user);
         double subtotal = cartService.calculateCurrentUserCartTotal(currentUser);
-
         modelMap.addAttribute("carts", carts);
         modelMap.addAttribute("subtotal", subtotal);
 
