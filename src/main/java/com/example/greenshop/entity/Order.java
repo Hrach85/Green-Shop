@@ -8,7 +8,7 @@ import java.util.Date;
 
 @Data
 @Entity
-@Table(name = "order")
+@Table(name = "order_table")
 public class Order {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -16,8 +16,8 @@ public class Order {
     @ManyToOne
     private User user;
     @DateTimeFormat(pattern = "yyyy-MM-dd'T'HH:mm")
-    private Date dateTime;
+    private Date orderDate;
     @ManyToOne
     private Product product;
-
+    private int quantity;
 }
