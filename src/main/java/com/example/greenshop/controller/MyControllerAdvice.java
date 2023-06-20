@@ -1,9 +1,13 @@
 package com.example.greenshop.controller;
 
 import com.example.greenshop.entity.Cart;
+import com.example.greenshop.entity.Category;
+import com.example.greenshop.entity.Product;
 import com.example.greenshop.entity.User;
 import com.example.greenshop.security.CurrentUser;
 import com.example.greenshop.service.CartService;
+import com.example.greenshop.service.CategoryService;
+import com.example.greenshop.service.ProductService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.web.bind.annotation.ControllerAdvice;
@@ -16,6 +20,8 @@ import java.util.List;
 public class MyControllerAdvice {
 
     private final CartService cartService;
+    private final CategoryService categoryService;
+    private final ProductService productService;
 
 
     @ModelAttribute("currentUser")
@@ -46,5 +52,15 @@ public class MyControllerAdvice {
 
         }
         return null;
+    }
+
+    @ModelAttribute("categories")
+    public List<Category> allCategories() {
+        return categoryService.findCategories();
+    }
+
+    @ModelAttribute("products")
+    public List<Product> allProducts() {
+        return productService.findProducts();
     }
 }

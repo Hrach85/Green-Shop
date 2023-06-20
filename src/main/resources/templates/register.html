@@ -1,26 +1,255 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>register</title>
-</head>
-<body>
-<div th:if="${currentUser!= null}">Welcome <b th:text="${currentUser .name}"></b> <br>
-    <a href="/logout"> Logout</a>
-</div>
-<form action="/user/register" method="post">
-    name:<input type="text" name="name"><br>
-    surname:<input type="text" name="surname"><br>
-    phone:<input type="text" name="phone"><br>
-    email:<input type="text" name="email"><br>
-    house:<input type="text" name="house"><br>
-    street:<input type="text" name="street"><br>
-    city:<input type="text" name="city"><br>
-    postal_code:<input type="text" name="postal_code"><br>
-    country:<input type="text" name="country"><br>
-    password<input type="password" name="password"><br>
-    <input type="submit" value="register">
-</form>
+﻿<!doctype html>
+<html class="no-js" lang="zxx">
+    <head>
+        <meta charset="utf-8">
+        <div th:include="fragment/header::inportFragment"></div>
 
-</body>
+    </head>
+    <body>
+    <div th:if="${currentUser != null}">Welcome <b th:text="${currentUser.name}"></b><br></div>
+    <div th:if="${currentUser!= null}">
+        <script>
+            window.location.href = "/";
+        </script>
+    </div>
+    <div th:include="fragment/header::headrFragment"></div>
+
+        <!-- Breadcrumb Area -->
+        <section class="breadcrumb-area">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="breadcrumb-box text-center">
+                            <ul class="list-unstyled list-inline">
+                                <li class="list-inline-item"><a href="">Home</a></li>
+                                <li class="list-inline-item"><span>||</span> Register</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- End Breadcrumb Area -->
+
+        <!-- Register -->
+    <section class="register">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <form action="/user/register" method="post">
+                        <h5>Create Your Account</h5>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <label>First Name*</label>
+                                <input type="text" name="name" placeholder="Your first name">
+                            </div>
+                            <div class="col-md-12">
+                                <label>Last Name*</label>
+                                <input type="text" name="surname" placeholder="Your Last surname">
+                            </div>
+                            <div class="col-md-12">
+                                <label>Email Address*</label>
+                                <input type="text" name="email" placeholder="Your email address">
+                            </div>
+                            <div class="col-md-12">
+                                <label>Phone Number*</label>
+                                <input type="text" name="phone" placeholder="Your phone number">
+                            </div>
+                            <div class="col-md-12">
+                                <label>Password*</label>
+                                <input  type="text"  name="password" placeholder="Password should be more than 6 characters">
+                            </div>
+
+                            <div class="col-md-12">
+                                <label>Country</label>
+                                <input type="text" name="country" placeholder="your country">
+                            </div>
+                            <div class="col-md-12">
+                                <div>
+                                    <label>City</label>
+                                    <input type="text" name="city" placeholder="your city">
+                                </div>
+                                <div>
+                                    <label>Street</label>
+                                    <input type="text" name="street" placeholder="your street">
+                                </div>
+                                <div>
+                                    <label>House</label>
+                                    <input type="text" name="house" placeholder="your house">
+                                </div>
+                                <div>
+                                    <label>Postal_code</label>
+                                    <input type="text" name="postal_code" placeholder="your postal_code">
+                                </div>
+                            </div>
+                            <div class="col-md-5 text-right">
+                                <button type="submit" name="button">register</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- End Register -->
+
+        <!-- Brand area 2 -->
+        <section class="brand2">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="tp-bnd owl-carousel">
+                            <div class="bnd-items">
+                                <a href="#"><img src="/images/brand-01.png" alt="" class="img-fluid"></a>
+                            </div>
+                            <div class="bnd-items">
+                                <a href="#"><img src="/images/brand-02.png" alt="" class="img-fluid"></a>
+                            </div>
+                            <div class="bnd-items">
+                                <a href="#"><img src="/images/brand-03.png" alt="" class="img-fluid"></a>
+                            </div>
+                            <div class="bnd-items">
+                                <a href="#"><img src="/images/brand-04.png" alt="" class="img-fluid"></a>
+                            </div>
+                            <div class="bnd-items">
+                                <a href="#"><img src="/images/brand-05.png" alt="" class="img-fluid"></a>
+                            </div>
+                            <div class="bnd-items">
+                                <a href="#"><img src="/images/brand-06.png" alt="" class="img-fluid"></a>
+                            </div>
+                            <div class="bnd-items">
+                                <a href="#"><img src="/images/brand-07.png" alt="" class="img-fluid"></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- End Brand area 2 -->
+
+        <!-- Footer Area -->
+        <section class="footer-top">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-3">
+                        <div class="f-contact">
+                            <h5>Contact Info</h5>
+                            <div class="f-add">
+                                <i class="fa fa-map-marker"></i>
+                                <span>Address :</span>
+                                <p>795 South Park Avenue, New York, NY USA 94107</p>
+                            </div>
+                            <div class="f-email">
+                                <i class="fa fa-envelope"></i>
+                                <span>Email :</span>
+                                <p>enquery@domain.com</p>
+                            </div>
+                            <div class="f-phn">
+                                <i class="fa fa-phone"></i>
+                                <span>Phone :</span>
+                                <p>+1 908 875 7678</p>
+                            </div>
+                            <div class="f-social">
+                                <ul class="list-unstyled list-inline">
+                                    <li class="list-inline-item"><a href=""><i class="fa fa-facebook"></i></a></li>
+                                    <li class="list-inline-item"><a href=""><i class="fa fa-twitter"></i></a></li>
+                                    <li class="list-inline-item"><a href=""><i class="fa fa-linkedin"></i></a></li>
+                                    <li class="list-inline-item"><a href=""><i class="fa fa-google-plus"></i></a></li>
+                                    <li class="list-inline-item"><a href=""><i class="fa fa-pinterest"></i></a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="f-cat">
+                            <h5>Categories</h5>
+                            <ul class="list-unstyled">
+                                <li><a href=""><i class="fa fa-angle-right"></i>Clothing</a></li>
+                                <li><a href=""><i class="fa fa-angle-right"></i>Electronics</a></li>
+                                <li><a href=""><i class="fa fa-angle-right"></i>Smartphones & Tablets</a></li>
+                                <li><a href=""><i class="fa fa-angle-right"></i>Computer & Office</a></li>
+                                <li><a href=""><i class="fa fa-angle-right"></i>Home Appliances</a></li>
+                                <li><a href=""><i class="fa fa-angle-right"></i>Leather & Shoes</a></li>
+                                <li><a href=""><i class="fa fa-angle-right"></i>Kids & Babies</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="f-link">
+                            <h5>Quick Links</h5>
+                            <ul class="list-unstyled">
+                                <li><a href=""><i class="fa fa-angle-right"></i>My Account</a></li>
+                                <li><a href=""><i class="fa fa-angle-right"></i>Shopping Cart</a></li>
+                                <li><a href=""><i class="fa fa-angle-right"></i>My Wishlist</a></li>
+                                <li><a href=""><i class="fa fa-angle-right"></i>Checkout</a></li>
+                                <li><a href=""><i class="fa fa-angle-right"></i>Order History</a></li>
+                                <li><a href=""><i class="fa fa-angle-right"></i>Log In</a></li>
+                                <li><a href=""><i class="fa fa-angle-right"></i>Our Locations</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="f-sup">
+                            <h5>Support</h5>
+                            <ul class="list-unstyled">
+                                <li><a href=""><i class="fa fa-angle-right"></i>Contact Us</a></li>
+                                <li><a href=""><i class="fa fa-angle-right"></i>Payment Policy</a></li>
+                                <li><a href=""><i class="fa fa-angle-right"></i>Return Policy</a></li>
+                                <li><a href=""><i class="fa fa-angle-right"></i>Privacy Policy</a></li>
+                                <li><a href=""><i class="fa fa-angle-right"></i>Frequently asked questions</a></li>
+                                <li><a href=""><i class="fa fa-angle-right"></i>Terms & Condition</a></li>
+                                <li><a href=""><i class="fa fa-angle-right"></i>Delivery Info</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="footer-btm">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6">
+                        <p>Copyright &copy; 2020 | Designed With <i class="fa fa-heart"></i> by <a href="#" target="_blank">SnazzyTheme</a></p>
+                    </div>
+                    <div class="col-md-6 text-right">
+                        <img src="/images/payment.png" alt="" class="img-fluid">
+                    </div>
+                </div>
+            </div>
+            <div class="back-to-top text-center">
+                <img src="/images/backtotop.png" alt="" class="img-fluid">
+            </div>
+        </section>
+        <!-- End Footer Area -->
+
+
+        <!-- =========================================
+        JavaScript Files
+        ========================================== -->
+
+        <!-- jQuery JS -->
+        <script src="/js/assets/vendor/jquery-1.12.4.min.js"></script>
+
+        <!-- Bootstrap -->
+        <script src="/js/assets/popper.min.js"></script>
+        <script src="/js/assets/bootstrap.min.js"></script>
+
+        <!-- Owl Slider -->
+        <script src="/js/assets/owl.carousel.min.js"></script>
+
+        <!-- Wow Animation -->
+        <script src="/js/assets/wow.min.js"></script>
+
+        <!-- Price Filter -->
+        <script src="/js/assets/price-filter.js"></script>
+
+        <!-- Mean Menu -->
+        <script src="/js/assets/jquery.meanmenu.min.js"></script>
+
+        <!-- Custom JS -->
+        <script src="/js/plugins.js"></script>
+        <script src="/js/custom.js"></script>
+
+    </body>
 </html>
