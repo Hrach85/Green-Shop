@@ -1,7 +1,9 @@
 package com.example.greenshop.controller;
 
+import com.example.greenshop.dto.userDto.CreateUserRequestDto;
 import com.example.greenshop.entity.Role;
 import com.example.greenshop.entity.User;
+import com.example.greenshop.mapper.UserMapper;
 import com.example.greenshop.repository.UserRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.crypto.password.PasswordEncoder;
@@ -19,7 +21,7 @@ import java.util.Optional;
 public class UserController {
 
     private final PasswordEncoder passwordEncoder;
-
+    private final UserMapper userMapper;
     private final UserRepository userRepository;
 
     @GetMapping("/register")
@@ -28,9 +30,10 @@ public class UserController {
     }
 
     @PostMapping("/register")
-    public String register(@ModelAttribute User user){
-        Optional<User> userFromDB = userRepository.findByEmail(user.getEmail());
+    public String register(@ModelAttribute CreateUserRequestDto createUserRequestDto){
+        Optional<User> userFromDB = userRepository.findByEmail(createUserRequestDto.getEmail());
         if (userFromDB.isEmpty()){
+            User user = userMapper.map(createUserRequestDto);
             String password = user.getPassword();
             String encodedPassword = passwordEncoder.encode(password);
             user.setPassword(encodedPassword);

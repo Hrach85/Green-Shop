@@ -1,7 +1,11 @@
 package com.example.greenshop.controller;
 
+import com.example.greenshop.dto.categoryDto.CategoryDto;
+import com.example.greenshop.dto.categoryDto.CreateCategoryRequestDto;
+import com.example.greenshop.dto.productDto.ProductDto;
 import com.example.greenshop.entity.Category;
 import com.example.greenshop.entity.Product;
+import com.example.greenshop.mapper.CategoryMapper;
 import com.example.greenshop.security.CurrentUser;
 import com.example.greenshop.service.CategoryService;
 import com.example.greenshop.service.ProductService;
@@ -23,22 +27,24 @@ public class CategoryController {
     private final ProductService productService;
     private final CategoryService categoryService;
 
-
     @GetMapping
     public String categoryPage(ModelMap modelMap,
                                @AuthenticationPrincipal CurrentUser currentUser) {
         modelMap.addAttribute("categories", categoryService.findCategories());
         return "categories";
     }
+
     @GetMapping("/add")
     public String categoriesAddPage() {
         return "addCategories";
     }
+
     @PostMapping("/add")
-    public String categoriesAdd(@ModelAttribute Category category) throws IOException {
-        categoryService.addCategory(category);
+    public String categoriesAdd(@ModelAttribute CreateCategoryRequestDto createCategoryRequestDto) throws IOException {
+        categoryService.addCategory(createCategoryRequestDto);
         return "redirect:/categories";
     }
+
     @GetMapping("/remove")
     public String removeCategory(@RequestParam("id") int id) {
         categoryService.deleteById(id);
@@ -47,18 +53,9 @@ public class CategoryController {
 
     @GetMapping("/{id}")
     public String singleCategoryPagePost(@PathVariable("id") int id, ModelMap modelMap) {
-        Optional<Category> byId = categoryService.findById(id);
-        if (byId.isPresent()) {
-            Category category = byId.get();
-            List<Product> products = productService.findProducts();
-            modelMap.addAttribute("category", category);
-            modelMap.addAttribute("products", products);
-            return "singleCategory";
-        } else {
-            return "redirect:/products";
-        }
+        modelMap.addAttribute("category",categoryService.singleCategoryPage(id));
+        modelMap.addAttribute("products", productService.findProducts());
+        return "singleCategory";
     }
-
-
 
 }

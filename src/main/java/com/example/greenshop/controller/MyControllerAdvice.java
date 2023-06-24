@@ -1,8 +1,9 @@
 package com.example.greenshop.controller;
 
+import com.example.greenshop.dto.cartDto.CartDto;
+import com.example.greenshop.dto.categoryDto.CategoryDto;
+import com.example.greenshop.dto.productDto.ProductDto;
 import com.example.greenshop.entity.Cart;
-import com.example.greenshop.entity.Category;
-import com.example.greenshop.entity.Product;
 import com.example.greenshop.entity.User;
 import com.example.greenshop.security.CurrentUser;
 import com.example.greenshop.service.CartService;
@@ -33,10 +34,10 @@ public class MyControllerAdvice {
     }
 
     @ModelAttribute("carts")
-    public List<Cart> cartUser(@AuthenticationPrincipal CurrentUser currentUser) {
+    public List<CartDto> cartUser(@AuthenticationPrincipal CurrentUser currentUser) {
         if (currentUser != null) {
             User user = currentUser.getUser();
-            List<Cart> carts = cartService.findCartsByUser(user);
+            List<CartDto> carts = cartService.findCartsByUser(user);
             if (carts != null) {
                 return carts;
             }
@@ -55,12 +56,12 @@ public class MyControllerAdvice {
     }
 
     @ModelAttribute("categories")
-    public List<Category> allCategories() {
+    public List<CategoryDto> allCategories() {
         return categoryService.findCategories();
     }
 
     @ModelAttribute("products")
-    public List<Product> allProducts() {
+    public List<ProductDto> allProducts() {
         return productService.findProducts();
     }
 }

@@ -42,13 +42,13 @@
                         </tr>
                         </thead>
                         <tbody>
-                        <tr th:each="cart : ${carts}">
+                        <tr th:each="cartDto : ${carts}">
                             <td class="t-pro d-flex">
                                 <div class="t-img">
-                                    <a href="#"><img th:src="${cart.product.getImage()}" alt=""></a>
+                                    <a href="#"><img th:src="${cartDto.productDto.getImage()}" alt=""></a>
                                 </div>
                                 <div class="t-content">
-                                    <p class="t-heading"><a href="#" th:text="${cart.product.name}"></a></p>
+                                    <p class="t-heading"><a href="#" th:text="${cartDto.productDto.name}"></a></p>
                                     <ul class="list-unstyled list-inline rate">
                                         <li class="list-inline-item"><i class="fa fa-star"></i></li>
                                         <li class="list-inline-item"><i class="fa fa-star"></i></li>
@@ -57,21 +57,21 @@
                                         <li class="list-inline-item"><i class="fa fa-star-o"></i></li>
                                     </ul>
                                     <ul class="list-unstyled col-sz">
-                                        <li><p>Color: <span th:text="${cart.product.getName()}"></span></p></li>
-                                        <li><p>Size: <span th:text="${cart.product.getName()}"></span></p></li>
+                                        <li><p>Color: <span th:text="${cartDto.productDto.getName()}"></span></p></li>
+                                        <li><p>Size: <span th:text="${cartDto.productDto.getName()}"></span></p></li>
                                     </ul>
                                 </div>
                             </td>
-                            <td class="t-price" th:text="${cart.product.price}"></td>
+                            <td class="t-price" th:text="${cartDto.productDto.price}"></td>
                             <td class="t-qty">
 
                                 <div class="qty-box">
                                     <form method="POST" action="/cart/update">
                                         <div class="quantity buttons_added">
-                                            <input type="hidden" name="cartId" th:value="${cart.id}">
+                                            <input type="hidden" name="cartId" th:value="${cartDto.id}">
                                             <input type="button" value="-" class="minus">
                                             <input type="number" name="quantity" step="1" min="1" max="10"
-                                                   th:value="${cart.quantity}" class="qty text" size="4">
+                                                   th:value="${cartDto.quantity}" class="qty text" size="4">
                                             <input type="button" value="+" class="plus">
                                             <input type="submit" value="Update" class="update-btn"></div>
                                     </form>
@@ -79,8 +79,8 @@
 
 
                             </td>
-                            <td class="t-total" th:text="${cart.product.price * cart.quantity}"></td>
-                            <td class="t-rem"><a th:href="@{/cart/remove(id=${cart.id})}">Delate<i class="fa fa-trash-o"></i></a></td>
+                            <td class="t-total" th:text="${cartDto.productDto.price * cartDto.quantity}"></td>
+                            <td class="t-rem"><a th:href="@{/cart/remove(id=${cartDto.id})}">Delate<i class="fa fa-trash-o"></i></a></td>
                         </tr>
 
 

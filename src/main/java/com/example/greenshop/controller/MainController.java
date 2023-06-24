@@ -1,7 +1,7 @@
 package com.example.greenshop.controller;
 
-import com.example.greenshop.entity.Category;
-import com.example.greenshop.entity.Product;
+import com.example.greenshop.dto.categoryDto.CategoryDto;
+import com.example.greenshop.dto.productDto.ProductDto;
 import com.example.greenshop.entity.Role;
 import com.example.greenshop.entity.User;
 import com.example.greenshop.security.CurrentUser;
@@ -50,16 +50,17 @@ public class MainController {
 
     @GetMapping("/customSuccessLogin")
     public String customSuccessLogin(@AuthenticationPrincipal CurrentUser currentUser) {
-        if (currentUser != null) {
+        if (currentUser != null && currentUser.getUser() != null) {
             User user = currentUser.getUser();
-            if(user.getRole() == Role.ADMIN){
+            if (user.getRole() == Role.ADMIN) {
                 return "redirect:/user/admin";
-            }else if(user.getRole() == Role.CUSTOMER){
+            } else if (user.getRole() == Role.CUSTOMER) {
                 return "redirect:/";
             }
         }
         return "redirect:/";
     }
+
 
     @GetMapping(value = "/getImage",
             produces = MediaType.IMAGE_JPEG_VALUE)
@@ -73,8 +74,8 @@ public class MainController {
     }
     @GetMapping("/admin")
     public String adminPage(ModelMap modelMap) {
-        List<Product> products = productService.findProducts();
-        List<Category> categories = categoryService.findCategories();
+        List<ProductDto> products = productService.findProducts();
+        List<CategoryDto> categories = categoryService.findCategories();
         modelMap.addAttribute("categories", categories);
         modelMap.addAttribute("products", products);
         return "admin";

@@ -1,5 +1,7 @@
 package com.example.greenshop.controller;
 
+import com.example.greenshop.dto.orderDto.CreateOrderRequestDto;
+import com.example.greenshop.dto.orderDto.UpdateOrderRequestDto;
 import com.example.greenshop.entity.Cart;
 import com.example.greenshop.entity.Order;
 import com.example.greenshop.entity.User;
@@ -25,22 +27,20 @@ public class OrderController {
 
     @GetMapping("/{id}")
     public String getOrderById(@PathVariable int id, ModelMap modelMap) {
-        Order order = orderService.findById(id);
-        modelMap.addAttribute("order", order);
+        modelMap.addAttribute("order", orderService.getOrderById(id));
         return "singleOrder";
     }
 
     @GetMapping
     public String getOrdersByUserId(@AuthenticationPrincipal CurrentUser currentUser, ModelMap modelMap) {
-        List<Order> orders = orderService.findOrdersByUser(currentUser.getUser().getId());
-        modelMap.addAttribute("orders", orders);
+        modelMap.addAttribute("orders", orderService.findOrdersByUser(currentUser.getUser().getId()));
         return "orderPage";
 
     }
 
     @PostMapping
-    public String addOrder(@RequestBody Order order, @RequestParam("userId") int userId) {
-        orderService.addOrders(order, userId);
+    public String addOrder(@RequestBody CreateOrderRequestDto createOrderRequestDto, @RequestParam("userId") int userId) {
+        orderService.addOrders(createOrderRequestDto, userId);
         return "redirect:/order";
     }
 
@@ -51,7 +51,7 @@ public class OrderController {
     }
 
     @PostMapping("/update/{id}")
-    public String updateOrder(@PathVariable int id, @ModelAttribute Order updatedOrder) {
+    public String updateOrder(@PathVariable int id, @ModelAttribute UpdateOrderRequestDto updatedOrder) {
         orderService.update(id, updatedOrder);
         return "redirect:/order/";
     }

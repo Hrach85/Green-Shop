@@ -148,13 +148,13 @@
             <div class="cart-content" th:each="cart : ${carts}">
                 <div class="content-item d-flex justify-content-between">
                     <div class="cart-img">
-                        <a href=""><img th:src="${cart.product.getImage()}" alt=""></a>
+                        <a href=""><img th:src="${cart.productDto.getImage()}" alt=""></a>
                     </div>
                     <div class="cart-disc">
-                        <p><a href="" th:text="${cart.product.name}"></a></p>
+                        <p><a href="" th:text="${cart.productDto.name}"></a></p>
                         <span th:text="${cart.quantity}"> </span>
                         <span> X </span>
-                        <span th:text="${cart.product.price}"> </span>
+                        <span th:text="${cart.productDto.price}"> </span>
 
                     </div>
                     <div class="delete-btn">
