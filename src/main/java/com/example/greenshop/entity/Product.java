@@ -18,5 +18,6 @@ public class Product  {
     @ManyToOne
     private Category category;
     private int quantity;
+    private Double rating;
 
 }

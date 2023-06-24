@@ -10,6 +10,6 @@ import org.mapstruct.Mapper;
 public interface RatingsreviewMapper {
 
     Ratingsreview map(CreateRatingsreviewRequestDto dto);
-    RatingsreviewDto mapToDto(RatingsreviewMapper entity);
+    RatingsreviewDto mapToDto(Ratingsreview entity);
     Ratingsreview updateDto(UpdateRatingsreviewRequestDto entity);
 }

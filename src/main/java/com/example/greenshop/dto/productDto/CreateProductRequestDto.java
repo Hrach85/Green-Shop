@@ -20,5 +20,5 @@ public class CreateProductRequestDto {
     private String image;
     private CategoryDto categoryDto;
     private int quantity;
-
+    private Double rating;
 }

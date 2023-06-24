@@ -19,5 +19,5 @@ public class ProductDto {
     private String image;
     private CategoryDto categoryDto;
     private int quantity;
-
+    private Double rating;
 }

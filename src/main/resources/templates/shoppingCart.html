@@ -50,15 +50,9 @@
                                 <div class="t-content">
                                     <p class="t-heading"><a href="#" th:text="${cartDto.productDto.name}"></a></p>
                                     <ul class="list-unstyled list-inline rate">
-                                        <li class="list-inline-item"><i class="fa fa-star"></i></li>
-                                        <li class="list-inline-item"><i class="fa fa-star"></i></li>
-                                        <li class="list-inline-item"><i class="fa fa-star"></i></li>
-                                        <li class="list-inline-item"><i class="fa fa-star"></i></li>
-                                        <li class="list-inline-item"><i class="fa fa-star-o"></i></li>
-                                    </ul>
-                                    <ul class="list-unstyled col-sz">
-                                        <li><p>Color: <span th:text="${cartDto.productDto.getName()}"></span></p></li>
-                                        <li><p>Size: <span th:text="${cartDto.productDto.getName()}"></span></p></li>
+                                        <li class="list-inline-item" th:each="star : ${#numbers.sequence(1, 5)}">
+                                            <i th:class="${star <= cartDto.productDto.getRating()} ? 'fa fa-star' : 'fa fa-star-o'"></i>
+                                        </li>
                                     </ul>
                                 </div>
                             </td>
@@ -133,8 +127,7 @@
                     <h5>Cart Summary</h5>
                     <ul class="list-unstyled">
                         <li>Subtotal <span th:text="${subtotal}"></span></li>
-                        <li>Shipping &amp; Tax <span>$00.00</span></li>
-                        <li>Grand Total <span th:text="${c}"></span></li>
+                        <li>Grand Total <span th:text="${subtotal}"></span></li>
                     </ul>
                     <div class="cart-btns text-right">
                         <form action="/cart/update" method="post">
@@ -181,57 +174,6 @@ JavaScript Files
 <script src="/js/plugins.js"></script>
 <script src="/js/custom.js"></script>
 
-
-<script>
-    const quantityElements = document.querySelectorAll('.quantity');
-
-    quantityElements.forEach((quantityElement) => {
-        const minusButton = quantityElement.querySelector('.minus');
-        const plusButton = quantityElement.querySelector('.plus');
-        const quantityInput = quantityElement.querySelector('input[name="quantity"]');
-
-        minusButton.addEventListener('click', () => {
-            updateQuantity(quantityInput, -1);
-        });
-
-        plusButton.addEventListener('click', () => {
-            updateQuantity(quantityInput, 1);
-        });
-
-        quantityInput.addEventListener('change', () => {
-            updateQuantity(quantityInput, 0);
-        });
-    });
-
-    function updateQuantity(quantityInput, change) {
-        const productId = quantityInput.dataset.productId;
-        const newQuantity = parseInt(quantityInput.value) + change;
-
-        // Отправляем асинхронный POST-запрос на сервер для обновления количества
-        fetch('/cart/update', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/x-www-form-urlencoded'
-            },
-            body: `productId=${productId}&quantity=${newQuantity}`
-        })
-            .then(response => {
-                if (response.ok) {
-                    return response.text();
-                } else {
-                    throw new Error('Ошибка запроса');
-                }
-            })
-            .then(() => {
-                // Обновляем страницу после успешного обновления количества
-                location.reload();
-            })
-            .catch(error => {
-                console.error(error);
-            });
-    }
-
-</script>
 
 </body>
 </html>
