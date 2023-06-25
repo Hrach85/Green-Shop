@@ -3,12 +3,11 @@ package com.example.greenshop.controller;
 import com.example.greenshop.dto.cartDto.CartDto;
 import com.example.greenshop.dto.categoryDto.CategoryDto;
 import com.example.greenshop.dto.productDto.ProductDto;
-import com.example.greenshop.entity.Cart;
 import com.example.greenshop.entity.User;
 import com.example.greenshop.security.CurrentUser;
 import com.example.greenshop.service.CartService;
 import com.example.greenshop.service.CategoryService;
-import com.example.greenshop.service.ProductService;
+import com.example.greenshop.service.RatingsreviewService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.web.bind.annotation.ControllerAdvice;
@@ -22,7 +21,7 @@ public class MyControllerAdvice {
 
     private final CartService cartService;
     private final CategoryService categoryService;
-    private final ProductService productService;
+    private final RatingsreviewService ratingsreviewService;
 
 
     @ModelAttribute("currentUser")
@@ -47,12 +46,7 @@ public class MyControllerAdvice {
 
     @ModelAttribute("subtotal")
     public Double subtotal(@AuthenticationPrincipal CurrentUser currentUser) {
-        if (currentUser != null) {
-            double subtotal = cartService.calculateCurrentUserCartTotal(currentUser);
-            return subtotal;
-
-        }
-        return null;
+        return (currentUser != null) ? cartService.calculateCurrentUserCartTotal(currentUser) : null;
     }
 
     @ModelAttribute("categories")
@@ -62,6 +56,7 @@ public class MyControllerAdvice {
 
     @ModelAttribute("products")
     public List<ProductDto> allProducts() {
-        return productService.findProducts();
+        return ratingsreviewService.allProductsRating();
     }
+
 }

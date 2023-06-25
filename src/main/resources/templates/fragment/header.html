@@ -60,25 +60,26 @@
                         </div>
                         <div class="mny-box">
                             <span>USD<i class="fa fa-angle-down"></i></span>
-                            <ul class="list-unstyled">
-                                <li>USD</li>
-                                <li>GBP</li>
-                                <li>EUR</li>
-                            </ul>
                         </div>
                         <div class="call-us">
-                            <p><img src="/images/phn.png" alt="">+1 (111) 426 6573</p>
+                            <p><img src="/images/phn.png" alt="">+374 (090) 000 xxx</p>
                         </div>
                     </div>
                 </div>
                 <div class="col-md-6">
                     <div class="top-right text-right">
                         <ul class="list-unstyled list-inline">
-                            <li class="list-inline-item"><a href=""><img src="images/user.png" alt="">My Account</a>
+                            <li class="list-inline-item"><a th:if="${currentUser!= null}" href="/user"><img
+                                     alt="">Welcome <b th:text="${currentUser.name}"></b> <br></a></li>
+
+
+                            <li class="list-inline-item"><a href="/user"><img src="/images/user.png" alt="">My Account</a>
                             <li class="list-inline-item"><a th:if="${currentUser== null}" href="/login"><img
-                                    src="images/login.png" alt="">Login</a></li>
+                                    src="/images/login.png" alt="">Login</a></li>
                             <li class="list-inline-item"><a th:if="${currentUser!= null}" href="/logout"><img
-                                    src="images/checkout.png" alt="">Logout</a></li>
+                                    src="/images/checkout.png" alt="">Logout</a></li>
+                            <li class="list-inline-item"><a th:if="${currentUser!= null}" href="/cart"><img
+                                    src="/images/cart.png" alt="">Cart</a></li>
                         </ul>
                     </div>
                 </div>
@@ -93,7 +94,7 @@
             <div class="row">
                 <div class="col-md-3">
                     <div class="logo">
-                        <a href=""><img src="/images/logo.png" alt=""></a>
+                        <a href="/"><img src="/images/logo.png" alt=""></a>
                     </div>
                 </div>
                 <div class="col-lg-6 col-md-7 padding-fix">
@@ -101,32 +102,21 @@
                         <input type="text" name="search-bar" placeholder="I'm looking for...">
                         <div class="search-cat">
                             <select class="form-control scat-id">
-                                <option>All Categories</option>
-                                <option>Category One</option>
-                                <option>Category Two</option>
-                                <option>Category Three</option>
-                                <option>Category Four</option>
-                                <option>Category Five</option>
-                                <option>Category Six</option>
-                                <option>Category Seven</option>
+                                <option th:each="category : ${categories}" th:value="${category.id}"
+                                        th:text="${category.name}"></option>
                             </select>
                         </div>
-                        <button type="submit"><i class="fa fa-search"></i></button>
+                        <button  type="submit"><i class="fa fa-search"></i></button>
                     </form>
                 </div>
+
                 <div class="col-lg-3 col-md-2">
                     <div class="carts-area d-flex">
-                        <div class="wsh-box ml-auto">
-                            <a href="" data-toggle="tooltip" data-placement="top" title="Wishlist">
-                                <img src="/images/heart.png" alt="favorite">
-                                <span>0</span>
-                            </a>
-                        </div>
-                        <div class="cart-box ml-4">
-                            <a href="" data-toggle="tooltip" data-placement="top" title="Shopping Cart"
+                        <div class="cart-box ml-4" th:each="cart : ${carts}">
+                            <a href="#" data-toggle="tooltip" data-placement="top" title="Shopping Cart"
                                class="cart-btn">
                                 <img src="/images/cart.png" alt="cart">
-                                <span>2</span>
+                                <span th:text="${carts.size()}"></span>
                             </a>
                         </div>
                     </div>
@@ -178,17 +168,13 @@
             <div class="row">
                 <div class="col-lg-2 col-md-3">
                     <div class="sticky-logo">
-                        <a href="index.html"><img src="/images/logo.png" alt="" class="img-fluid"></a>
+                        <a href="/"><img src="/images/logo.png" alt="" class="img-fluid"></a>
                     </div>
                 </div>
                 <div class="col-lg-6 col-md-7">
                     <div class="main-menu">
                         <ul class="list-unstyled list-inline">
-                            <li class="list-inline-item"><a>HOME <i class="fa fa-angle-down"></i></a>
-                                <ul class="dropdown list-unstyled">
-                                    <li><a href="index.html">Home Style 1</a></li>
-                                    <li><a href="02-home-two.html">Home Style 2</a></li>
-                                </ul>
+                            <li class="list-inline-item"><a href="/">>HOME <i class="fa fa-angle-down"></i></a>
                             </li>
                             <li class="list-inline-item mega-menu"><a>MEGA MENU <i class="fa fa-angle-down"></i></a>
                                 <div class="mega-box">
@@ -228,7 +214,7 @@
                                                 <h6>Latest News</h6>
                                                 <div class="news-box d-flex">
                                                     <div class="news-img">
-                                                        <img src="images/mega-img-1.jpg" alt="">
+                                                        <img src="/images/mega-img-1.jpg" alt="">
                                                     </div>
                                                     <div class="news-con">
                                                         <p>Lorem ipsum dolor sit...</p>
@@ -237,7 +223,7 @@
                                                 </div>
                                                 <div class="news-box d-flex">
                                                     <div class="news-img">
-                                                        <img src="images/mega-img-2.jpg" alt="">
+                                                        <img src="/images/mega-img-2.jpg" alt="">
                                                     </div>
                                                     <div class="news-con">
                                                         <p>Lorem ipsum dolor sit...</p>
@@ -246,7 +232,7 @@
                                                 </div>
                                                 <div class="news-box d-flex">
                                                     <div class="news-img">
-                                                        <img src="images/mega-img-3.jpg" alt="">
+                                                        <img src="/images/mega-img-3.jpg" alt="">
                                                     </div>
                                                     <div class="news-con">
                                                         <p>Lorem ipsum dolor sit...</p>
@@ -258,11 +244,11 @@
                                         <div class="col-md-3">
                                             <div class="m-slider owl-carousel">
                                                 <div class="slider-item">
-                                                    <img src="images/mega-1.jpg" alt="" class="img-fluid">
+                                                    <img src="/images/mega-1.jpg" alt="" class="img-fluid">
                                                     <span>-65%</span>
                                                 </div>
                                                 <div class="slider-item">
-                                                    <img src="images/mega-2.jpg" alt="" class="img-fluid">
+                                                    <img src="/images/mega-2.jpg" alt="" class="img-fluid">
                                                     <span>-50%</span>
                                                 </div>
                                             </div>
@@ -337,19 +323,14 @@
                                 <button type="button" name="button"><i class="fa fa-search"></i></button>
                             </form>
                         </div>
-                        <div class="wsh-box ml-auto">
-                            <a href="" data-toggle="tooltip" data-placement="top" title="Wishlist">
-                                <img src="/images/heart.png" alt="favorite">
-                                <span>0</span>
-                            </a>
-                        </div>
-                        <div class="cart-box ml-4">
-                            <a href="" data-toggle="tooltip" data-placement="top" title="Shopping Cart"
+                        <div class="cart-box ml-4" th:each="cart : ${carts}">
+                            <a href="#" data-toggle="tooltip" data-placement="top" title="Shopping Cart"
                                class="cart-btn">
                                 <img src="/images/cart.png" alt="cart">
-                                <span>2</span>
+                                <span th:text="${carts.size()}"></span>
                             </a>
                         </div>
+
                     </div>
                 </div>
             </div>
@@ -363,21 +344,6 @@
     <section class="menu-area2">
         <div class="container">
             <div class="row">
-                <!--                <div class="col-lg-3 col-md-0">-->
-                <!--                    <div class="sidemenu">-->
-                <!--                        <p>All Categories <i class="fa fa-bars"  ></i></p>-->
-                <!--                        -->
-                <!--                        <ul class="list-unstyled gt-menu" >-->
-                <!--                            <div  th:each="category : ${categories}">-->
-                <!--                                <li><a href=""><img src="images/m-cloth.png"  th:text="${category.name}"><i-->
-                <!--                                        class="fa fa-angle-right"></i></a>-->
-                <!--                                    <div class="mega-menu">-->
-                <!--                                    </div>-->
-                <!--                                </li>-->
-                <!--                            </div>-->
-                <!--                        </ul>-->
-                <!--                    </div>-->
-                <!--                </div>-->
                 <div class="col-lg-3 col-md-0">
                     <div class="sidemenu">
                         <p>All Categories <i class="fa fa-bars"></i></p>
@@ -391,11 +357,7 @@
                 <div class="col-lg-9 col-md-12">
                     <div class="main-menu">
                         <ul class="list-unstyled list-inline">
-                            <li class="list-inline-item"><a>HOME <i class="fa fa-angle-down"></i></a>
-                                <ul class="dropdown list-unstyled">
-                                    <li><a href="index.html">Home Style 1</a></li>
-                                    <li><a href="02-home-two.html">Home Style 2</a></li>
-                                </ul>
+                            <li class="list-inline-item"><a href="/">HOME <i class="fa fa-angle-down"></i></a>
                             </li>
                             <li class="list-inline-item"><a>PAGE'S <i class="fa fa-angle-down"></i></a>
                                 <ul class="dropdown list-unstyled">
@@ -493,25 +455,25 @@
                                                 <div class="row">
                                                     <div class="col-md-3">
                                                         <a href="#" class="bnr-box text-center">
-                                                            <img src="images/mega-b-1.jpg" alt="">
+                                                            <img src="/images/mega-b-1.jpg" alt="">
                                                             <span>Camera</span>
                                                         </a>
                                                     </div>
                                                     <div class="col-md-3">
                                                         <a href="#" class="bnr-box text-center">
-                                                            <img src="images/mega-b-2.jpg" alt="">
+                                                            <img src="/images/mega-b-2.jpg" alt="">
                                                             <span>Mouse</span>
                                                         </a>
                                                     </div>
                                                     <div class="col-md-3">
                                                         <a href="#" class="bnr-box text-center">
-                                                            <img src="images/mega-b-3.jpg" alt="">
+                                                            <img src="/images/mega-b-3.jpg" alt="">
                                                             <span>Earphone</span>
                                                         </a>
                                                     </div>
                                                     <div class="col-md-3">
                                                         <a href="#" class="bnr-box text-center">
-                                                            <img src="images/mega-b-4.jpg" alt="">
+                                                            <img src="/images/mega-b-4.jpg" alt="">
                                                             <span>Speaker</span>
                                                         </a>
                                                     </div>
@@ -615,7 +577,7 @@
                         <h5>Contact Info</h5>
                         <div class="f-add">
                             <i class="fa fa-map-marker"></i>
-                            <span>Address :</span>
+                            <span>Address:</span>
                             <p>795 South Park Avenue, Armenia</p>
                         </div>
                         <div class="f-email">

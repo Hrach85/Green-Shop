@@ -1,10 +1,13 @@
 package com.example.greenshop.controller;
 
 import com.example.greenshop.dto.productDto.CreateProductRequestDto;
+import com.example.greenshop.dto.productDto.ProductDto;
 import com.example.greenshop.dto.productDto.UpdateProductRequestDto;
+import com.example.greenshop.dto.ratingsreviewDto.RatingsreviewDto;
 import com.example.greenshop.security.CurrentUser;
 import com.example.greenshop.service.CategoryService;
 import com.example.greenshop.service.ProductService;
+import com.example.greenshop.service.RatingsreviewService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.stereotype.Controller;
@@ -13,6 +16,9 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Optional;
 
 @Controller
 @RequestMapping("/products")
@@ -21,9 +27,13 @@ public class ProductController {
 
     private final ProductService productService;
     private final CategoryService categoryService;
+    private final RatingsreviewService ratingsreviewService;
 
     @GetMapping("/{id}")
     public String singleProductPage(@PathVariable("id") int id, ModelMap modelMap) {
+        List<RatingsreviewDto> allByProductId = ratingsreviewService.getAllByProductId(id);
+        modelMap.addAttribute("reviews",allByProductId);
+        modelMap.addAttribute("ratings",ratingsreviewService.calculateProductRating(allByProductId));
         modelMap.addAttribute("product", productService.singleProduct(id));
         return "singleProduct";
     }
@@ -31,7 +41,7 @@ public class ProductController {
     @GetMapping
     public String productPage(ModelMap modelMap,
                               @AuthenticationPrincipal CurrentUser currentUser) {
-        modelMap.addAttribute("products", productService.findProducts());
+        modelMap.addAttribute("products", ratingsreviewService.allProductsRating());
         modelMap.addAttribute("categories", categoryService.findCategories());
         return "products";
     }

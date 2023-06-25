@@ -7,6 +7,7 @@ import com.example.greenshop.entity.User;
 import com.example.greenshop.security.CurrentUser;
 import com.example.greenshop.service.CategoryService;
 import com.example.greenshop.service.ProductService;
+import lombok.RequiredArgsConstructor;
 import org.apache.commons.io.IOUtils;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.MediaType;
@@ -23,7 +24,7 @@ import java.io.IOException;
 import java.util.List;
 
 @Controller
-
+@RequiredArgsConstructor
 public class MainController {
 
     @Value("${green_shop.upload.image.path}")
@@ -31,20 +32,13 @@ public class MainController {
     private final CategoryService categoryService;
     private final ProductService productService;
 
-    public MainController(CategoryService categoryService, ProductService productService) {
-        this.categoryService = categoryService;
-        this.productService = productService;
-    }
-
     @GetMapping("/")
     public String main() {
         return "index";
     }
 
-
-
     @GetMapping("/customLogin")
-    public String customLogin(){
+    public String customLogin() {
         return "customLoginPage";
     }
 
@@ -72,6 +66,7 @@ public class MainController {
         }
         return null;
     }
+
     @GetMapping("/admin")
     public String adminPage(ModelMap modelMap) {
         List<ProductDto> products = productService.findProducts();

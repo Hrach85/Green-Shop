@@ -2,37 +2,12 @@
 <html class="no-js" lang="zxx">
     <head>
         <meta charset="utf-8">
-        <meta http-equiv="x-ua-compatible" content="ie=edge">
-        <title>XeMart - Ecommerce Template</title>
-        <meta name="description" content="">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-
-        <!-- Favicon -->
-        <link rel="shortcut icon" href="../static/images/favicon.ico" type="image/x-icon">
-        <link rel="icon" href="../static/images/favicon.ico" type="image/x-icon">
-
-        <!-- Google Fonts -->
-        <link href="../../../../../../Desktop/shblon/www.thetahmid.com/css?family=Source+Sans+Pro:200,300,400,600,700,900" rel="stylesheet">
-
-        <!-- Bootstrap -->
-        <link rel="stylesheet" href="../static/css/assets/bootstrap.min.css">
-
-		<!-- Fontawesome Icon -->
-        <link rel="stylesheet" href="../static/css/assets/font-awesome.min.css">
-
-		<!-- Animate Css -->
-        <link rel="stylesheet" href="../static/css/assets/animate.css">
-
-        <!-- Owl Slider -->
-        <link rel="stylesheet" href="../static/css/assets/owl.carousel.min.css">
-
-        <!-- Custom Style -->
-        <link rel="stylesheet" href="../static/css/assets/normalize.css">
-        <link rel="stylesheet" href="../static/css/style.css">
-        <link rel="stylesheet" href="../static/css/assets/responsive.css">
+        <title>Product Page</title>
+        <div th:include="fragment/header::inportFragment"></div>
 
     </head>
     <body>
+    <div th:include="fragment/header::headrFragment"></div>
 
         <!-- Preloader -->
         <div class="preloader">
@@ -50,12 +25,12 @@
                     <div class="col-md-6">
                         <div class="top-left d-flex">
                             <div class="lang-box">
-                                <span><img src="../static/images/fl-eng.png" alt="">English<i class="fa fa-angle-down"></i></span>
+                                <span><img src="/images/fl-eng.png" alt="">English<i class="fa fa-angle-down"></i></span>
                                 <ul class="list-unstyled">
-                                    <li><img src="../static/images/fl-eng.png" alt="">English</li>
-                                    <li><img src="../static/images/fl-fra.png" alt="">French</li>
-                                    <li><img src="../static/images/fl-ger.png" alt="">German</li>
-                                    <li><img src="../static/images/fl-bra.png" alt="">Brazilian</li>
+                                    <li><img src="/images/fl-eng.png" alt="">English</li>
+                                    <li><img src="/images/fl-fra.png" alt="">French</li>
+                                    <li><img src="/images/fl-ger.png" alt="">German</li>
+                                    <li><img src="/images/fl-bra.png" alt="">Brazilian</li>
                                 </ul>
                             </div>
                             <div class="mny-box">
@@ -67,17 +42,17 @@
                                 </ul>
                             </div>
                             <div class="call-us">
-                                <p><img src="../static/images/phn.png" alt="">+1 (111) 426 6573</p>
+                                <p><img src="/images/phn.png" alt="">+1 (111) 426 6573</p>
                             </div>
                         </div>
                     </div>
                     <div class="col-md-6">
                         <div class="top-right text-right">
                             <ul class="list-unstyled list-inline">
-                                <li class="list-inline-item"><a href=""><img src="../static/images/user.png" alt="">My Account</a></li>
-                                <li class="list-inline-item"><a href=""><img src="../static/images/wishlist.png" alt="">Wishlist</a></li>
-                                <li class="list-inline-item"><a href=""><img src="../static/images/checkout.png" alt="">Checkout</a></li>
-                                <li class="list-inline-item"><a href=""><img src="../static/images/login.png" alt="">Login</a></li>
+                                <li class="list-inline-item"><a href="../"><img src="/images/user.png" alt="">My Account</a></li>
+                                <li class="list-inline-item"><a href="../"><img src="/images/wishlist.png" alt="">Wishlist</a></li>
+                                <li class="list-inline-item"><a href="../"><img src="/images/checkout.png" alt="">Checkout</a></li>
+                                <li class="list-inline-item"><a href="../"><img src="/images/login.png" alt="">Login</a></li>
                             </ul>
                         </div>
                     </div>
@@ -92,7 +67,7 @@
                 <div class="row">
                     <div class="col-md-3">
                         <div class="logo">
-                            <a href=""><img src="../static/images/logo.png" alt=""></a>
+                            <a href="../"><img src="/images/logo.png" alt=""></a>
                         </div>
                     </div>
                     <div class="col-lg-6 col-md-7 padding-fix">
@@ -116,14 +91,14 @@
                     <div class="col-lg-3 col-md-2">
                         <div class="carts-area d-flex">
                             <div class="wsh-box ml-auto">
-                                <a href="" data-toggle="tooltip" data-placement="top" title="Wishlist">
-                                    <img src="../static/images/heart.png" alt="favorite">
+                                <a href="../" data-toggle="tooltip" data-placement="top" title="Wishlist">
+                                    <img src="/images/heart.png" alt="favorite">
                                     <span>0</span>
                                 </a>
                             </div>
                             <div class="cart-box ml-4">
-                                <a href="" data-toggle="tooltip" data-placement="top" title="Shopping Cart" class="cart-btn">
-                                    <img src="../static/images/cart.png" alt="cart">
+                                <a href="../" data-toggle="tooltip" data-placement="top" title="Shopping Cart" class="cart-btn">
+                                    <img src="/images/cart.png" alt="cart">
                                     <span>2</span>
                                 </a>
                             </div>
@@ -137,7 +112,7 @@
         <!-- Cart Body -->
         <div class="cart-body">
             <div class="close-btn">
-                <button class="close-cart"><img src="../static/images/close.png" alt="">Close</button>
+                <button class="close-cart"><img src="/images/close.png" alt="">Close</button>
             </div>
             <div class="crt-bd-box">
                 <div class="cart-heading text-center">
@@ -146,32 +121,32 @@
                 <div class="cart-content">
                     <div class="content-item d-flex justify-content-between">
                         <div class="cart-img">
-                            <a href=""><img src="../static/images/cart1.png" alt=""></a>
+                            <a href="../"><img src="/images/cart1.png" alt=""></a>
                         </div>
                         <div class="cart-disc">
-                            <p><a href="">SMART LED TV</a></p>
+                            <p><a href="../">SMART LED TV</a></p>
                             <span>1 x $199.00</span>
                         </div>
                         <div class="delete-btn">
-                            <a href=""><i class="fa fa-trash-o"></i></a>
+                            <a href="../"><i class="fa fa-trash-o"></i></a>
                         </div>
                     </div>
                     <div class="content-item d-flex justify-content-between">
                         <div class="cart-img">
-                            <a href=""><img src="../static/images/cart2.png" alt=""></a>
+                            <a href="../"><img src="/images/cart2.png" alt=""></a>
                         </div>
                         <div class="cart-disc">
-                            <p><a href="">SMART LED TV</a></p>
+                            <p><a href="../">SMART LED TV</a></p>
                             <span>1 x $199.00</span>
                         </div>
                         <div class="delete-btn">
-                            <a href=""><i class="fa fa-trash-o"></i></a>
+                            <a href="../"><i class="fa fa-trash-o"></i></a>
                         </div>
                     </div>
                 </div>
                 <div class="cart-btm">
                     <p class="text-right">Sub Total: <span>$398.00</span></p>
-                    <a href="#">Checkout</a>
+                    <a href="../#">Checkout</a>
                 </div>
             </div>
         </div>
@@ -184,7 +159,7 @@
                 <div class="row">
                     <div class="col-lg-2 col-md-3">
                         <div class="sticky-logo">
-                            <a href="index1.html"><img src="../static/images/logo.png" alt="" class="img-fluid"></a>
+                            <a href="../index1.html"><img src="/images/logo.png" alt="" class="img-fluid"></a>
                         </div>
                     </div>
                     <div class="col-lg-6 col-md-7">
@@ -192,8 +167,8 @@
                             <ul class="list-unstyled list-inline">
                                 <li class="list-inline-item"><a>HOME <i class="fa fa-angle-down"></i></a>
                                     <ul class="dropdown list-unstyled">
-                                        <li><a href="index1.html">Home Style 1</a></li>
-                                        <li><a href="index.html">Home Style 2</a></li>
+                                        <li><a href="../index1.html">Home Style 1</a></li>
+                                        <li><a href="../index.html">Home Style 2</a></li>
                                     </ul>
                                 </li>
                                 <li class="list-inline-item mega-menu"><a>MEGA MENU <i class="fa fa-angle-down"></i></a>
@@ -203,14 +178,14 @@
                                                 <div class="clt-area">
                                                     <h6>Clothing</h6>
                                                     <div class="link-box">
-                                                        <a href="">- Western Clothing</a>
-                                                        <a href="">- Traditional Clothing</a>
-                                                        <a href="">- Winter Clothing</a>
-                                                        <a href="">- Summer Clothing</a>
-                                                        <a href="">- Inner Wear</a>
-                                                        <a href="">- Night Wear</a>
-                                                        <a href="">- Mens Clothing</a>
-                                                        <a href="">- Womens Clothing</a>
+                                                        <a href="../">- Western Clothing</a>
+                                                        <a href="../">- Traditional Clothing</a>
+                                                        <a href="../">- Winter Clothing</a>
+                                                        <a href="../">- Summer Clothing</a>
+                                                        <a href="../">- Inner Wear</a>
+                                                        <a href="../">- Night Wear</a>
+                                                        <a href="../">- Mens Clothing</a>
+                                                        <a href="../">- Womens Clothing</a>
                                                     </div>
                                                 </div>
                                             </div>
@@ -218,14 +193,14 @@
                                                 <div class="sm-phn">
                                                     <h6>Smartphones</h6>
                                                     <div class="dept-box">
-                                                        <a href="">- Samsung</a>
-                                                        <a href="">- Huawei</a>
-                                                        <a href="">- One Plus</a>
-                                                        <a href="">- Xiaomi</a>
-                                                        <a href="">- Iphone</a>
-                                                        <a href="">- Blackberry</a>
-                                                        <a href="">- Nokia</a>
-                                                        <a href="">- Oppo</a>
+                                                        <a href="../">- Samsung</a>
+                                                        <a href="../">- Huawei</a>
+                                                        <a href="../">- One Plus</a>
+                                                        <a href="../">- Xiaomi</a>
+                                                        <a href="../">- Iphone</a>
+                                                        <a href="../">- Blackberry</a>
+                                                        <a href="../">- Nokia</a>
+                                                        <a href="../">- Oppo</a>
                                                     </div>
                                                 </div>
                                             </div>
@@ -234,7 +209,7 @@
                                                     <h6>Latest News</h6>
                                                     <div class="news-box d-flex">
                                                         <div class="news-img">
-                                                            <img src="../static/images/mega-img-1.jpg" alt="">
+                                                            <img src="/images/mega-img-1.jpg" alt="">
                                                         </div>
                                                         <div class="news-con">
                                                             <p>Lorem ipsum dolor sit...</p>
@@ -243,7 +218,7 @@
                                                     </div>
                                                     <div class="news-box d-flex">
                                                         <div class="news-img">
-                                                            <img src="../static/images/mega-img-2.jpg" alt="">
+                                                            <img src="/images/mega-img-2.jpg" alt="">
                                                         </div>
                                                         <div class="news-con">
                                                             <p>Lorem ipsum dolor sit...</p>
@@ -252,7 +227,7 @@
                                                     </div>
                                                     <div class="news-box d-flex">
                                                         <div class="news-img">
-                                                            <img src="../static/images/mega-img-3.jpg" alt="">
+                                                            <img src="/images/mega-img-3.jpg" alt="">
                                                         </div>
                                                         <div class="news-con">
                                                             <p>Lorem ipsum dolor sit...</p>
@@ -264,11 +239,11 @@
                                             <div class="col-md-3">
                                                 <div class="m-slider owl-carousel">
                                                     <div class="slider-item">
-                                                        <img src="../static/images/mega-1.jpg" alt="" class="img-fluid">
+                                                        <img src="/images/mega-1.jpg" alt="" class="img-fluid">
                                                         <span>-65%</span>
                                                     </div>
                                                     <div class="slider-item">
-                                                        <img src="../static/images/mega-2.jpg" alt="" class="img-fluid">
+                                                        <img src="/images/mega-2.jpg" alt="" class="img-fluid">
                                                         <span>-50%</span>
                                                     </div>
                                                 </div>
@@ -277,26 +252,26 @@
                                                 <div class="mega-bnr">
                                                     <div class="row">
                                                         <div class="col-md-3">
-                                                            <a href="#" class="bnr-box text-center">
-                                                                <img src="../static/images/mega-b-1.jpg" alt="">
+                                                            <a href="../#" class="bnr-box text-center">
+                                                                <img src="/images/mega-b-1.jpg" alt="">
                                                                 <span>Camera</span>
                                                             </a>
                                                         </div>
                                                         <div class="col-md-3">
-                                                            <a href="#" class="bnr-box text-center">
-                                                                <img src="../static/images/mega-b-2.jpg" alt="">
+                                                            <a href="../#" class="bnr-box text-center">
+                                                                <img src="/images/mega-b-2.jpg" alt="">
                                                                 <span>Mouse</span>
                                                             </a>
                                                         </div>
                                                         <div class="col-md-3">
-                                                            <a href="#" class="bnr-box text-center">
-                                                                <img src="../static/images/mega-b-3.jpg" alt="">
+                                                            <a href="../#" class="bnr-box text-center">
+                                                                <img src="/images/mega-b-3.jpg" alt="">
                                                                 <span>Earphone</span>
                                                             </a>
                                                         </div>
                                                         <div class="col-md-3">
-                                                            <a href="#" class="bnr-box text-center">
-                                                                <img src="../static/images/mega-b-4.jpg" alt="">
+                                                            <a href="../#" class="bnr-box text-center">
+                                                                <img src="/images/mega-b-4.jpg" alt="">
                                                                 <span>Speaker</span>
                                                             </a>
                                                         </div>
@@ -308,30 +283,30 @@
                                 </li>
                                 <li class="list-inline-item"><a>PAGES <i class="fa fa-angle-down"></i></a>
                                     <ul class="dropdown list-unstyled">
-                                        <li><a href="03-about-us.html">About Us</a></li>
-                                        <li><a href="04-category.html">Category</a></li>
-                                        <li><a href="05-single-product.html">Single Product</a></li>
-                                        <li><a href="06-shopping-cart.html">Shopping Cart</a></li>
-                                        <li><a href="07-checkout.html">Checkout</a></li>
-                                        <li><a href="customLoginPage.html">Log In</a></li>
-                                        <li><a href="09-register.html">Register</a></li>
-                                        <li><a href="10-wishlist.html">Wishlist</a></li>
-                                        <li><a href="11-compare.html">Compare</a></li>
-                                        <li><a href="15-track-order.html">Track Order</a></li>
-                                        <li><a href="12-terms-condition.html">Terms & Condition</a></li>
-                                        <li><a href="13-faq.html">Faq</a></li>
-                                        <li><a href="14-404.html">404</a></li>
+                                        <li><a href="../03-about-us.html">About Us</a></li>
+                                        <li><a href="../04-category.html">Category</a></li>
+                                        <li><a href="../05-single-product.html">Single Product</a></li>
+                                        <li><a href="../shoppingCart.html">Shopping Cart</a></li>
+                                        <li><a href="../07-checkout.html">Checkout</a></li>
+                                        <li><a href="../customLoginPage.html">Log In</a></li>
+                                        <li><a href="../09-register.html">Register</a></li>
+                                        <li><a href="../10-wishlist.html">Wishlist</a></li>
+                                        <li><a href="../11-compare.html">Compare</a></li>
+                                        <li><a href="../15-track-order.html">Track Order</a></li>
+                                        <li><a href="../12-terms-condition.html">Terms & Condition</a></li>
+                                        <li><a href="../13-faq.html">Faq</a></li>
+                                        <li><a href="../14-404.html">404</a></li>
                                     </ul>
                                 </li>
                                 <li class="list-inline-item"><a>BLOG <i class="fa fa-angle-down"></i></a>
                                     <ul class="dropdown list-unstyled">
-                                        <li><a href="16-blog-one.html">Blog Style 1</a></li>
-                                        <li><a href="17-blog-two.html">Blog Style 2</a></li>
-                                        <li><a href="18-blog-three.html">Blog Style 3</a></li>
-                                        <li><a href="19-blog-details.html">Blog Details</a></li>
+                                        <li><a href="../16-blog-one.html">Blog Style 1</a></li>
+                                        <li><a href="../17-blog-two.html">Blog Style 2</a></li>
+                                        <li><a href="../18-blog-three.html">Blog Style 3</a></li>
+                                        <li><a href="../19-blog-details.html">Blog Details</a></li>
                                     </ul>
                                 </li>
-                                <li class="list-inline-item"><a href="20-contact.html">CONTACT</a></li>
+                                <li class="list-inline-item"><a href="../20-contact.html">CONTACT</a></li>
                             </ul>
                         </div>
                     </div>
@@ -344,14 +319,14 @@
                                 </form>
                             </div>
                             <div class="wsh-box ml-auto">
-                                <a href="" data-toggle="tooltip" data-placement="top" title="Wishlist">
-                                    <img src="../static/images/heart.png" alt="favorite">
+                                <a href="../" data-toggle="tooltip" data-placement="top" title="Wishlist">
+                                    <img src="/images/heart.png" alt="favorite">
                                     <span>0</span>
                                 </a>
                             </div>
                             <div class="cart-box ml-4">
-                                <a href="" data-toggle="tooltip" data-placement="top" title="Shopping Cart" class="cart-btn">
-                                    <img src="../static/images/cart.png" alt="cart">
+                                <a href="../" data-toggle="tooltip" data-placement="top" title="Shopping Cart" class="cart-btn">
+                                    <img src="/images/cart.png" alt="cart">
                                     <span>2</span>
                                 </a>
                             </div>
@@ -370,58 +345,58 @@
                         <div class="sidemenu">
                             <p>All Categories <i class="fa fa-bars"></i></p>
                             <ul class="list-unstyled gt-menu">
-                                <li><a href=""><img src="../static/images/m-cloth.png" alt="">Men's Clothing<i class="fa fa-angle-right"></i></a>
+                                <li><a href="../"><img src="/images/m-cloth.png" alt="">Men's Clothing<i class="fa fa-angle-right"></i></a>
                                     <div class="mega-menu">
                                         <div class="row">
                                             <div class="col-md-4">
                                                 <div class="smartphone">
                                                     <h6>Smartphones</h6>
-                                                    <a href="">- Samsung</a>
-                                                    <a href="">- Huawei</a>
-                                                    <a href="">- Asus</a>
-                                                    <a href="">- Sony</a>
-                                                    <a href="">- Apple</a>
-                                                    <a href="">- Xiaomi</a>
-                                                    <a href="">- Oppo</a>
-                                                    <a href="">- One Plus</a>
-                                                    <a href="">- Nokia</a>
-                                                    <a href="">- Htc</a>
-                                                    <a href="">- Vivo</a>
+                                                    <a href="../">- Samsung</a>
+                                                    <a href="../">- Huawei</a>
+                                                    <a href="../">- Asus</a>
+                                                    <a href="../">- Sony</a>
+                                                    <a href="../">- Apple</a>
+                                                    <a href="../">- Xiaomi</a>
+                                                    <a href="../">- Oppo</a>
+                                                    <a href="../">- One Plus</a>
+                                                    <a href="../">- Nokia</a>
+                                                    <a href="../">- Htc</a>
+                                                    <a href="../">- Vivo</a>
                                                 </div>
                                             </div>
                                             <div class="col-md-4">
                                                 <div class="tablet">
                                                     <h6>Tablets</h6>
-                                                    <a href="">- Samsung</a>
-                                                    <a href="">- Huawei</a>
-                                                    <a href="">- Apple</a>
-                                                    <a href="">- Xiaomi</a>
-                                                    <a href="">- Sony</a>
-                                                    <a href="">- Asus</a>
+                                                    <a href="../">- Samsung</a>
+                                                    <a href="../">- Huawei</a>
+                                                    <a href="../">- Apple</a>
+                                                    <a href="../">- Xiaomi</a>
+                                                    <a href="../">- Sony</a>
+                                                    <a href="../">- Asus</a>
                                                 </div>
                                                 <div class="f-phone">
                                                     <h6>Feature Phones</h6>
-                                                    <a href="">- Samsung</a>
-                                                    <a href="">- Nokia</a>
-                                                    <a href="">- Infinix</a>
+                                                    <a href="../">- Samsung</a>
+                                                    <a href="../">- Nokia</a>
+                                                    <a href="../">- Infinix</a>
                                                 </div>
                                             </div>
                                             <div class="col-md-4">
                                                 <div class="accesories">
                                                     <h6>Accessories</h6>
-                                                    <a href="">- Power Bank</a>
-                                                    <a href="">- Battery & Charger</a>
-                                                    <a href="">- Cables & Adapters</a>
-                                                    <a href="">- Back / Flip Cover</a>
-                                                    <a href="">- Screen Protector</a>
-                                                    <a href="">- Earphones</a>
-                                                    <a href="">- Memory Card</a>
-                                                    <a href="">- Phone Cases</a>
+                                                    <a href="../">- Power Bank</a>
+                                                    <a href="../">- Battery & Charger</a>
+                                                    <a href="../">- Cables & Adapters</a>
+                                                    <a href="../">- Back / Flip Cover</a>
+                                                    <a href="../">- Screen Protector</a>
+                                                    <a href="../">- Earphones</a>
+                                                    <a href="../">- Memory Card</a>
+                                                    <a href="../">- Phone Cases</a>
                                                 </div>
                                             </div>
                                             <div class="col-md-12">
                                                 <div class="mg-bnr">
-                                                    <img src="../static/images/ipn.png" alt="">
+                                                    <img src="/images/ipn.png" alt="">
                                                     <div class="mg-content text-right">
                                                         <h4>Iphone</h4>
                                                         <span>Save upto 50% off</span>
@@ -431,58 +406,58 @@
                                         </div>
                                     </div>
                                 </li>
-                                <li><a href=""><img src="../static/images/w-cloth.png" alt="">Women's Clothing<i class="fa fa-angle-right"></i></a>
+                                <li><a href="../"><img src="/images/w-cloth.png" alt="">Women's Clothing<i class="fa fa-angle-right"></i></a>
                                     <div class="mega-menu">
                                         <div class="row">
                                             <div class="col-md-4">
                                                 <div class="smartphone">
                                                     <h6>Smartphones</h6>
-                                                    <a href="">- Samsung</a>
-                                                    <a href="">- Huawei</a>
-                                                    <a href="">- Asus</a>
-                                                    <a href="">- Sony</a>
-                                                    <a href="">- Apple</a>
-                                                    <a href="">- Xiaomi</a>
-                                                    <a href="">- Oppo</a>
-                                                    <a href="">- One Plus</a>
-                                                    <a href="">- Nokia</a>
-                                                    <a href="">- Htc</a>
-                                                    <a href="">- Vivo</a>
+                                                    <a href="../">- Samsung</a>
+                                                    <a href="../">- Huawei</a>
+                                                    <a href="../">- Asus</a>
+                                                    <a href="../">- Sony</a>
+                                                    <a href="../">- Apple</a>
+                                                    <a href="../">- Xiaomi</a>
+                                                    <a href="../">- Oppo</a>
+                                                    <a href="../">- One Plus</a>
+                                                    <a href="../">- Nokia</a>
+                                                    <a href="../">- Htc</a>
+                                                    <a href="../">- Vivo</a>
                                                 </div>
                                             </div>
                                             <div class="col-md-4">
                                                 <div class="tablet">
                                                     <h6>Tablets</h6>
-                                                    <a href="">- Samsung</a>
-                                                    <a href="">- Huawei</a>
-                                                    <a href="">- Apple</a>
-                                                    <a href="">- Xiaomi</a>
-                                                    <a href="">- Sony</a>
-                                                    <a href="">- Asus</a>
+                                                    <a href="../">- Samsung</a>
+                                                    <a href="../">- Huawei</a>
+                                                    <a href="../">- Apple</a>
+                                                    <a href="../">- Xiaomi</a>
+                                                    <a href="../">- Sony</a>
+                                                    <a href="../">- Asus</a>
                                                 </div>
                                                 <div class="f-phone">
                                                     <h6>Feature Phones</h6>
-                                                    <a href="">- Samsung</a>
-                                                    <a href="">- Nokia</a>
-                                                    <a href="">- Infinix</a>
+                                                    <a href="../">- Samsung</a>
+                                                    <a href="../">- Nokia</a>
+                                                    <a href="../">- Infinix</a>
                                                 </div>
                                             </div>
                                             <div class="col-md-4">
                                                 <div class="accesories">
                                                     <h6>Accessories</h6>
-                                                    <a href="">- Power Bank</a>
-                                                    <a href="">- Battery & Charger</a>
-                                                    <a href="">- Cables & Adapters</a>
-                                                    <a href="">- Back / Flip Cover</a>
-                                                    <a href="">- Screen Protector</a>
-                                                    <a href="">- Earphones</a>
-                                                    <a href="">- Memory Card</a>
-                                                    <a href="">- Phone Cases</a>
+                                                    <a href="../">- Power Bank</a>
+                                                    <a href="../">- Battery & Charger</a>
+                                                    <a href="../">- Cables & Adapters</a>
+                                                    <a href="../">- Back / Flip Cover</a>
+                                                    <a href="../">- Screen Protector</a>
+                                                    <a href="../">- Earphones</a>
+                                                    <a href="../">- Memory Card</a>
+                                                    <a href="../">- Phone Cases</a>
                                                 </div>
                                             </div>
                                             <div class="col-md-12">
                                                 <div class="mg-bnr tab-bnr">
-                                                    <img src="../static/images/tab.png" alt="">
+                                                    <img src="/images/tab.png" alt="">
                                                     <div class="mg-content text-right">
                                                         <h4>Tablet</h4>
                                                         <span>Save upto 50% off</span>
@@ -492,58 +467,58 @@
                                         </div>
                                     </div>
                                 </li>
-                                <li><a href=""><img src="../static/images/ele.png" alt="">Electronics<i class="fa fa-angle-right"></i></a>
+                                <li><a href="../"><img src="/images/ele.png" alt="">Electronics<i class="fa fa-angle-right"></i></a>
                                     <div class="mega-menu">
                                         <div class="row">
                                             <div class="col-md-4">
                                                 <div class="smartphone">
                                                     <h6>Smartphones</h6>
-                                                    <a href="">- Samsung</a>
-                                                    <a href="">- Huawei</a>
-                                                    <a href="">- Asus</a>
-                                                    <a href="">- Sony</a>
-                                                    <a href="">- Apple</a>
-                                                    <a href="">- Xiaomi</a>
-                                                    <a href="">- Oppo</a>
-                                                    <a href="">- One Plus</a>
-                                                    <a href="">- Nokia</a>
-                                                    <a href="">- Htc</a>
-                                                    <a href="">- Vivo</a>
+                                                    <a href="../">- Samsung</a>
+                                                    <a href="../">- Huawei</a>
+                                                    <a href="../">- Asus</a>
+                                                    <a href="../">- Sony</a>
+                                                    <a href="../">- Apple</a>
+                                                    <a href="../">- Xiaomi</a>
+                                                    <a href="../">- Oppo</a>
+                                                    <a href="../">- One Plus</a>
+                                                    <a href="../">- Nokia</a>
+                                                    <a href="../">- Htc</a>
+                                                    <a href="../">- Vivo</a>
                                                 </div>
                                             </div>
                                             <div class="col-md-4">
                                                 <div class="tablet">
                                                     <h6>Tablets</h6>
-                                                    <a href="">- Samsung</a>
-                                                    <a href="">- Huawei</a>
-                                                    <a href="">- Apple</a>
-                                                    <a href="">- Xiaomi</a>
-                                                    <a href="">- Sony</a>
-                                                    <a href="">- Asus</a>
+                                                    <a href="../">- Samsung</a>
+                                                    <a href="../">- Huawei</a>
+                                                    <a href="../">- Apple</a>
+                                                    <a href="../">- Xiaomi</a>
+                                                    <a href="../">- Sony</a>
+                                                    <a href="../">- Asus</a>
                                                 </div>
                                                 <div class="f-phone">
                                                     <h6>Feature Phones</h6>
-                                                    <a href="">- Samsung</a>
-                                                    <a href="">- Nokia</a>
-                                                    <a href="">- Infinix</a>
+                                                    <a href="../">- Samsung</a>
+                                                    <a href="../">- Nokia</a>
+                                                    <a href="../">- Infinix</a>
                                                 </div>
                                             </div>
                                             <div class="col-md-4">
                                                 <div class="accesories">
                                                     <h6>Accessories</h6>
-                                                    <a href="">- Power Bank</a>
-                                                    <a href="">- Battery & Charger</a>
-                                                    <a href="">- Cables & Adapters</a>
-                                                    <a href="">- Back / Flip Cover</a>
-                                                    <a href="">- Screen Protector</a>
-                                                    <a href="">- Earphones</a>
-                                                    <a href="">- Memory Card</a>
-                                                    <a href="">- Phone Cases</a>
+                                                    <a href="../">- Power Bank</a>
+                                                    <a href="../">- Battery & Charger</a>
+                                                    <a href="../">- Cables & Adapters</a>
+                                                    <a href="../">- Back / Flip Cover</a>
+                                                    <a href="../">- Screen Protector</a>
+                                                    <a href="../">- Earphones</a>
+                                                    <a href="../">- Memory Card</a>
+                                                    <a href="../">- Phone Cases</a>
                                                 </div>
                                             </div>
                                             <div class="col-md-12">
                                                 <div class="mg-bnr pw-bnr">
-                                                    <img src="../static/images/pbank.png" alt="">
+                                                    <img src="/images/pbank.png" alt="">
                                                     <div class="mg-content text-right">
                                                         <h4>Powerbank</h4>
                                                         <span>Save upto 50% off</span>
@@ -553,15 +528,15 @@
                                         </div>
                                     </div>
                                 </li>
-                                <li><a href=""><img src="../static/images/sm.png" alt="">Smartphone & Tablet</a></li>
-                                <li><a href=""><img src="../static/images/com.png" alt="">Computer & Office</a></li>
-                                <li><a href=""><img src="../static/images/tv.png" alt="">Home Applience</a></li>
-                                <li><a href=""><img src="../static/images/shoe.png" alt="">Leather & Shoes</a></li>
-                                <li><a href=""><img src="../static/images/kid.png" alt="">Kids & Babies</a></li>
-                                <li><a href=""><img src="../static/images/watch.png" alt="">Jewelary & Watches</a></li>
-                                <li><a href=""><img src="../static/images/health.png" alt="">Health & Beauty</a></li>
-                                <li><a href=""><img src="../static/images/car.png" alt="">Automobiles</a></li>
-                                <li><a href=""><img src="../static/images/sport.png" alt="">Sports & Outdoors</a></li>
+                                <li><a href="../"><img src="/images/sm.png" alt="">Smartphone & Tablet</a></li>
+                                <li><a href="../"><img src="/images/com.png" alt="">Computer & Office</a></li>
+                                <li><a href="../"><img src="/images/tv.png" alt="">Home Applience</a></li>
+                                <li><a href="../"><img src="/images/shoe.png" alt="">Leather & Shoes</a></li>
+                                <li><a href="../"><img src="/images/kid.png" alt="">Kids & Babies</a></li>
+                                <li><a href="../"><img src="/images/watch.png" alt="">Jewelary & Watches</a></li>
+                                <li><a href="../"><img src="/images/health.png" alt="">Health & Beauty</a></li>
+                                <li><a href="../"><img src="/images/car.png" alt="">Automobiles</a></li>
+                                <li><a href="../"><img src="/images/sport.png" alt="">Sports & Outdoors</a></li>
                             </ul>
                         </div>
                     </div>
@@ -570,25 +545,25 @@
                             <ul class="list-unstyled list-inline">
                                 <li class="list-inline-item"><a>HOME <i class="fa fa-angle-down"></i></a>
                                     <ul class="dropdown list-unstyled">
-                                        <li><a href="index1.html">Home Style 1</a></li>
-                                        <li><a href="index.html">Home Style 2</a></li>
+                                        <li><a href="../index1.html">Home Style 1</a></li>
+                                        <li><a href="../index.html">Home Style 2</a></li>
                                     </ul>
                                 </li>
                                 <li class="list-inline-item"><a>PAGE'S <i class="fa fa-angle-down"></i></a>
                                     <ul class="dropdown list-unstyled">
-                                        <li><a href="03-about-us.html">About Us</a></li>
-                                        <li><a href="04-category.html">Category</a></li>
-                                        <li><a href="05-single-product.html">Single Product</a></li>
-                                        <li><a href="06-shopping-cart.html">Shopping Cart</a></li>
-                                        <li><a href="07-checkout.html">Checkout</a></li>
-                                        <li><a href="customLoginPage.html">Log In</a></li>
-                                        <li><a href="09-register.html">Register</a></li>
-                                        <li><a href="10-wishlist.html">Wishlist</a></li>
-                                        <li><a href="11-compare.html">Compare</a></li>
-                                        <li><a href="15-track-order.html">Track Order</a></li>
-                                        <li><a href="12-terms-condition.html">Terms & Condition</a></li>
-                                        <li><a href="13-faq.html">Faq</a></li>
-                                        <li><a href="14-404.html">404</a></li>
+                                        <li><a href="../03-about-us.html">About Us</a></li>
+                                        <li><a href="../04-category.html">Category</a></li>
+                                        <li><a href="../05-single-product.html">Single Product</a></li>
+                                        <li><a href="../shoppingCart.html">Shopping Cart</a></li>
+                                        <li><a href="../07-checkout.html">Checkout</a></li>
+                                        <li><a href="../customLoginPage.html">Log In</a></li>
+                                        <li><a href="../09-register.html">Register</a></li>
+                                        <li><a href="../10-wishlist.html">Wishlist</a></li>
+                                        <li><a href="../11-compare.html">Compare</a></li>
+                                        <li><a href="../15-track-order.html">Track Order</a></li>
+                                        <li><a href="../12-terms-condition.html">Terms & Condition</a></li>
+                                        <li><a href="../13-faq.html">Faq</a></li>
+                                        <li><a href="../14-404.html">404</a></li>
                                     </ul>
                                 </li>
                                 <li class="list-inline-item mega-menu"><a>MEGA MENU <i class="fa fa-angle-down"></i></a>
@@ -598,14 +573,14 @@
                                                 <div class="clt-area">
                                                     <h6>Clothing</h6>
                                                     <div class="link-box">
-                                                        <a href="">- Western Clothing</a>
-                                                        <a href="">- Traditional Clothing</a>
-                                                        <a href="">- Winter Clothing</a>
-                                                        <a href="">- Summer Clothing</a>
-                                                        <a href="">- Inner Wear</a>
-                                                        <a href="">- Night Wear</a>
-                                                        <a href="">- Mens Clothing</a>
-                                                        <a href="">- Womens Clothing</a>
+                                                        <a href="../">- Western Clothing</a>
+                                                        <a href="../">- Traditional Clothing</a>
+                                                        <a href="../">- Winter Clothing</a>
+                                                        <a href="../">- Summer Clothing</a>
+                                                        <a href="../">- Inner Wear</a>
+                                                        <a href="../">- Night Wear</a>
+                                                        <a href="../">- Mens Clothing</a>
+                                                        <a href="../">- Womens Clothing</a>
                                                     </div>
                                                 </div>
                                             </div>
@@ -613,14 +588,14 @@
                                                 <div class="sm-phn">
                                                     <h6>Smartphones</h6>
                                                     <div class="dept-box">
-                                                        <a href="">- Samsung</a>
-                                                        <a href="">- Huawei</a>
-                                                        <a href="">- One Plus</a>
-                                                        <a href="">- Xiaomi</a>
-                                                        <a href="">- Iphone</a>
-                                                        <a href="">- Blackberry</a>
-                                                        <a href="">- Nokia</a>
-                                                        <a href="">- Oppo</a>
+                                                        <a href="../">- Samsung</a>
+                                                        <a href="../">- Huawei</a>
+                                                        <a href="../">- One Plus</a>
+                                                        <a href="../">- Xiaomi</a>
+                                                        <a href="../">- Iphone</a>
+                                                        <a href="../">- Blackberry</a>
+                                                        <a href="../">- Nokia</a>
+                                                        <a href="../">- Oppo</a>
                                                     </div>
                                                 </div>
                                             </div>
@@ -629,7 +604,7 @@
                                                     <h6>Latest News</h6>
                                                     <div class="news-box d-flex">
                                                         <div class="news-img">
-                                                            <img src="../static/images/mega-img-1.jpg" alt="">
+                                                            <img src="/images/mega-img-1.jpg" alt="">
                                                         </div>
                                                         <div class="news-con">
                                                             <p>Lorem ipsum dolor sit...</p>
@@ -638,7 +613,7 @@
                                                     </div>
                                                     <div class="news-box d-flex">
                                                         <div class="news-img">
-                                                            <img src="../static/images/mega-img-2.jpg" alt="">
+                                                            <img src="/images/mega-img-2.jpg" alt="">
                                                         </div>
                                                         <div class="news-con">
                                                             <p>Lorem ipsum dolor sit...</p>
@@ -647,7 +622,7 @@
                                                     </div>
                                                     <div class="news-box d-flex">
                                                         <div class="news-img">
-                                                            <img src="../static/images/mega-img-3.jpg" alt="">
+                                                            <img src="/images/mega-img-3.jpg" alt="">
                                                         </div>
                                                         <div class="news-con">
                                                             <p>Lorem ipsum dolor sit...</p>
@@ -659,11 +634,11 @@
                                             <div class="col-md-3">
                                                 <div class="m-slider owl-carousel">
                                                     <div class="slider-item">
-                                                        <img src="../static/images/mega-1.jpg" alt="" class="img-fluid">
+                                                        <img src="/images/mega-1.jpg" alt="" class="img-fluid">
                                                         <span>-65%</span>
                                                     </div>
                                                     <div class="slider-item">
-                                                        <img src="../static/images/mega-2.jpg" alt="" class="img-fluid">
+                                                        <img src="/images/mega-2.jpg" alt="" class="img-fluid">
                                                         <span>-50%</span>
                                                     </div>
                                                 </div>
@@ -672,26 +647,26 @@
                                                 <div class="mega-bnr">
                                                     <div class="row">
                                                         <div class="col-md-3">
-                                                            <a href="#" class="bnr-box text-center">
-                                                                <img src="../static/images/mega-b-1.jpg" alt="">
+                                                            <a href="../#" class="bnr-box text-center">
+                                                                <img src="/images/mega-b-1.jpg" alt="">
                                                                 <span>Camera</span>
                                                             </a>
                                                         </div>
                                                         <div class="col-md-3">
-                                                            <a href="#" class="bnr-box text-center">
-                                                                <img src="../static/images/mega-b-2.jpg" alt="">
+                                                            <a href="../#" class="bnr-box text-center">
+                                                                <img src="/images/mega-b-2.jpg" alt="">
                                                                 <span>Mouse</span>
                                                             </a>
                                                         </div>
                                                         <div class="col-md-3">
-                                                            <a href="#" class="bnr-box text-center">
-                                                                <img src="../static/images/mega-b-3.jpg" alt="">
+                                                            <a href="../#" class="bnr-box text-center">
+                                                                <img src="/images/mega-b-3.jpg" alt="">
                                                                 <span>Earphone</span>
                                                             </a>
                                                         </div>
                                                         <div class="col-md-3">
-                                                            <a href="#" class="bnr-box text-center">
-                                                                <img src="../static/images/mega-b-4.jpg" alt="">
+                                                            <a href="../#" class="bnr-box text-center">
+                                                                <img src="/images/mega-b-4.jpg" alt="">
                                                                 <span>Speaker</span>
                                                             </a>
                                                         </div>
@@ -703,14 +678,14 @@
                                 </li>
                                 <li class="list-inline-item"><a>BLOG <i class="fa fa-angle-down"></i></a>
                                     <ul class="dropdown list-unstyled">
-                                        <li><a href="16-blog-one.html">Blog Style 1</a></li>
-                                        <li><a href="17-blog-two.html">Blog Style 2</a></li>
-                                        <li><a href="18-blog-three.html">Blog Style 3</a></li>
-                                        <li><a href="19-blog-details.html">Blog Details</a></li>
+                                        <li><a href="../16-blog-one.html">Blog Style 1</a></li>
+                                        <li><a href="../17-blog-two.html">Blog Style 2</a></li>
+                                        <li><a href="../18-blog-three.html">Blog Style 3</a></li>
+                                        <li><a href="../19-blog-details.html">Blog Details</a></li>
                                     </ul>
                                 </li>
-                                <li class="list-inline-item"><a href="20-contact.html">CONTACT</a></li>
-                                <li class="list-inline-item cup-btn"><a href="">Get Your Coupon</a></li>
+                                <li class="list-inline-item"><a href="../20-contact.html">CONTACT</a></li>
+                                <li class="list-inline-item cup-btn"><a href="../">Get Your Coupon</a></li>
                             </ul>
                         </div>
                     </div>
@@ -726,41 +701,41 @@
                     <div class="col-md-12">
                         <div class="mobile-menu">
                             <nav id="dropdown">
-                                <a href=""><img src="../static/images/logo.png" alt=""></a>
-                                <a href=""><span>Sign In</span></a>
+                                <a href="../"><img src="/images/logo.png" alt=""></a>
+                                <a href="../"><span>Sign In</span></a>
                                 <ul class="list-unstyled">
-                                    <li><a href="">Home</a>
+                                    <li><a href="../">Home</a>
                                         <ul class="list-unstyled">
-                                            <li><a href="index1.html">Home Style 1</a></li>
-	                                        <li><a href="index.html">Home Style 2</a></li>
+                                            <li><a href="../index1.html">Home Style 1</a></li>
+	                                        <li><a href="../index.html">Home Style 2</a></li>
                                         </ul>
                                     </li>
-                                    <li><a href="">Pages</a>
+                                    <li><a href="../">Pages</a>
                                         <ul class="list-unstyled">
-                                            <li><a href="03-about-us.html">About Us</a></li>
-                                            <li><a href="04-category.html">Category</a></li>
-                                            <li><a href="05-single-product.html">Single Product</a></li>
-                                            <li><a href="06-shopping-cart.html">Shopping Cart</a></li>
-                                            <li><a href="07-checkout.html">Checkout</a></li>
-                                            <li><a href="customLoginPage.html">Log In</a></li>
-                                            <li><a href="09-register.html">Register</a></li>
-                                            <li><a href="10-wishlist.html">Wishlist</a></li>
-                                            <li><a href="11-compare.html">Compare</a></li>
-                                            <li><a href="15-track-order.html">Track Order</a></li>
-                                            <li><a href="12-terms-condition.html">Terms & Condition</a></li>
-                                            <li><a href="13-faq.html">Faq</a></li>
-                                            <li><a href="14-404.html">404</a></li>
+                                            <li><a href="../03-about-us.html">About Us</a></li>
+                                            <li><a href="../04-category.html">Category</a></li>
+                                            <li><a href="../05-single-product.html">Single Product</a></li>
+                                            <li><a href="../shoppingCart.html">Shopping Cart</a></li>
+                                            <li><a href="../07-checkout.html">Checkout</a></li>
+                                            <li><a href="../customLoginPage.html">Log In</a></li>
+                                            <li><a href="../09-register.html">Register</a></li>
+                                            <li><a href="../10-wishlist.html">Wishlist</a></li>
+                                            <li><a href="../11-compare.html">Compare</a></li>
+                                            <li><a href="../15-track-order.html">Track Order</a></li>
+                                            <li><a href="../12-terms-condition.html">Terms & Condition</a></li>
+                                            <li><a href="../13-faq.html">Faq</a></li>
+                                            <li><a href="../14-404.html">404</a></li>
                                         </ul>
                                     </li>
-                                    <li><a href="">Blog</a>
+                                    <li><a href="../">Blog</a>
                                         <ul class="list-unstyled">
-                                            <li><a href="16-blog-one.html">Blog Style 1</a></li>
-                                            <li><a href="17-blog-two.html">Blog Style 2</a></li>
-                                            <li><a href="18-blog-three.html">Blog Style 3</a></li>
-                                            <li><a href="19-blog-details.html">Blog Details</a></li>
+                                            <li><a href="../16-blog-one.html">Blog Style 1</a></li>
+                                            <li><a href="../17-blog-two.html">Blog Style 2</a></li>
+                                            <li><a href="../18-blog-three.html">Blog Style 3</a></li>
+                                            <li><a href="../19-blog-details.html">Blog Details</a></li>
                                         </ul>
                                     </li>
-                                    <li><a href="20-contact.html">Contact</a></li>
+                                    <li><a href="../20-contact.html">Contact</a></li>
                                 </ul>
                             </nav>
                         </div>
@@ -777,7 +752,7 @@
                     <div class="col-md-12">
                         <div class="breadcrumb-box text-center">
                             <ul class="list-unstyled list-inline">
-                                <li class="list-inline-item"><a href="">Home</a></li>
+                                <li class="list-inline-item"><a href="../">Home</a></li>
                                 <li class="list-inline-item"><span>||</span> Single Product</li>
                             </ul>
                         </div>
@@ -798,23 +773,23 @@
                                     <!-- Tab panes -->
                                     <div class="tab-content">
                                         <div class="tab-pane fade show active" id="sg1" role="tabpanel">
-                                            <img src="../static/images/tab-1.png" alt="" class="img-fluid">
+                                            <img src="/images/tab-1.png" alt="" class="img-fluid">
                                         </div>
                                         <div class="tab-pane" id="sg2" role="tabpanel">
-                                            <img src="../static/images/tab-2.png" alt="" class="img-fluid">
+                                            <img src="/images/tab-2.png" alt="" class="img-fluid">
                                         </div>
                                         <div class="tab-pane" id="sg3" role="tabpanel">
-                                            <img src="../static/images/tab-3.png" alt="" class="img-fluid">
+                                            <img src="/images/tab-3.png" alt="" class="img-fluid">
                                         </div>
                                         <div class="tab-pane" id="sg4" role="tabpanel">
-                                            <img src="../static/images/tab-4.png" alt="" class="img-fluid">
+                                            <img src="/images/tab-4.png" alt="" class="img-fluid">
                                         </div>
                                     </div>
                                     <div class="nav d-flex justify-content-between">
-                                        <a class="nav-item nav-link active" data-toggle="tab" href="#sg1"><img src="../static/images/tab-1.png" alt=""></a>
-                                        <a class="nav-item nav-link" data-toggle="tab" href="#sg2"><img src="../static/images/tab-2.png" alt=""></a>
-                                        <a class="nav-item nav-link" data-toggle="tab" href="#sg3"><img src="../static/images/tab-3.png" alt=""></a>
-                                        <a class="nav-item nav-link" data-toggle="tab" href="#sg4"><img src="../static/images/tab-4.png" alt=""></a>
+                                        <a class="nav-item nav-link active" data-toggle="tab" href="../#sg1"><img src="/images/tab-1.png" alt=""></a>
+                                        <a class="nav-item nav-link" data-toggle="tab" href="../#sg2"><img src="/images/tab-2.png" alt=""></a>
+                                        <a class="nav-item nav-link" data-toggle="tab" href="../#sg3"><img src="/images/tab-3.png" alt=""></a>
+                                        <a class="nav-item nav-link" data-toggle="tab" href="../#sg4"><img src="/images/tab-4.png" alt=""></a>
                                     </div>
                                 </div>
                             </div>
@@ -822,8 +797,8 @@
                                 <div class="sg-content">
                                     <div class="pro-tag">
                                         <ul class="list-unstyled list-inline">
-                                            <li class="list-inline-item"><a href="">Home Appliance ,</a></li>
-                                            <li class="list-inline-item"><a href="">Smart Led Tv</a></li>
+                                            <li class="list-inline-item"><a href="../">Home Appliance ,</a></li>
+                                            <li class="list-inline-item"><a href="../">Smart Led Tv</a></li>
                                         </ul>
                                     </div>
                                      <div class="pro-name">
@@ -836,7 +811,7 @@
                                              <li class="list-inline-item"><i class="fa fa-star"></i></li>
                                              <li class="list-inline-item"><i class="fa fa-star"></i></li>
                                              <li class="list-inline-item"><i class="fa fa-star-o"></i></li>
-                                             <li class="list-inline-item"><a href="">( 09 Review )</a></li>
+                                             <li class="list-inline-item"><a href="../">( 09 Review )</a></li>
                                          </ul>
                                      </div>
                                      <div class="pro-price">
@@ -900,9 +875,9 @@
                                              </ul>
                                          </div>
                                          <div class="pro-btns">
-                                              <a href="" class="cart">Add To Cart</a>
-                                              <a href="" class="fav-com" data-toggle="tooltip" data-placement="top" title="Wishlist"><img src="../static/images/it-fav.png" alt=""></a>
-                                              <a href="" class="fav-com" data-toggle="tooltip" data-placement="top" title="Compare"><img src="../static/images/it-comp.png" alt=""></a>
+                                              <a href="../" class="cart">Add To Cart</a>
+                                              <a href="../" class="fav-com" data-toggle="tooltip" data-placement="top" title="Wishlist"><img src="/images/it-fav.png" alt=""></a>
+                                              <a href="../" class="fav-com" data-toggle="tooltip" data-placement="top" title="Compare"><img src="/images/it-comp.png" alt=""></a>
                                          </div>
                                      </div>
                                 </div>
@@ -910,8 +885,8 @@
                             <div class="col-md-12">
                                 <div class="sg-tab">
                                     <ul class="nav nav-tabs" role="tablist">
-                                        <li class="nav-item"><a class="nav-link active" data-toggle="tab" href="#pro-det">Product Details</a></li>
-                                        <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#rev">Reviews (03)</a></li>
+                                        <li class="nav-item"><a class="nav-link active" data-toggle="tab" href="../#pro-det">Product Details</a></li>
+                                        <li class="nav-item"><a class="nav-link" data-toggle="tab" href="../#rev">Reviews (03)</a></li>
                                     </ul>
                                     <div class="tab-content">
                                         <div class="tab-pane fade show active" id="pro-det" role="tabpanel">
@@ -920,7 +895,7 @@
                                         <div class="tab-pane fade" id="rev" role="tabpanel">
                                             <div class="review-box d-flex">
                                                 <div class="rv-img">
-                                                    <img src="../static/images/testimonial-1.jpg" alt="">
+                                                    <img src="/images/testimonial-1.jpg" alt="">
                                                 </div>
                                                 <div class="rv-content">
                                                     <h6>Michel Kolins <span>(Feb 10, 2020)</span></h6>
@@ -936,7 +911,7 @@
                                             </div>
                                             <div class="review-box d-flex">
                                                 <div class="rv-img">
-                                                    <img src="../static/images/testimonial-2.jpg" alt="">
+                                                    <img src="/images/testimonial-2.jpg" alt="">
                                                 </div>
                                                 <div class="rv-content">
                                                     <h6>Jenus Doe <span>(Feb 10, 2020)</span></h6>
@@ -993,15 +968,15 @@
                                     <div class="sim-slider owl-carousel">
                                         <div class="sim-item">
                                             <div class="sim-img">
-                                                <img class="main-img img-fluid" src="../static/images/tab-5.png" alt="">
-                                                <img class="sec-img img-fluid" src="../static/images/tab-16.png" alt="">
+                                                <img class="main-img img-fluid" src="/images/tab-5.png" alt="">
+                                                <img class="sec-img img-fluid" src="/images/tab-16.png" alt="">
                                                 <div class="layer-box">
-                                                    <a href="" class="it-comp" data-toggle="tooltip" data-placement="left" title="Compare"><img src="../static/images/it-comp.png" alt=""></a>
-                                                    <a href="" class="it-fav" data-toggle="tooltip" data-placement="left" title="Favourite"><img src="../static/images/it-fav.png" alt=""></a>
+                                                    <a href="../" class="it-comp" data-toggle="tooltip" data-placement="left" title="Compare"><img src="/images/it-comp.png" alt=""></a>
+                                                    <a href="../" class="it-fav" data-toggle="tooltip" data-placement="left" title="Favourite"><img src="/images/it-fav.png" alt=""></a>
                                                 </div>
                                             </div>
                                             <div class="sim-heading">
-                                                <p><a href="">Item Title Here</a></p>
+                                                <p><a href="../">Item Title Here</a></p>
                                             </div>
                                             <div class="img-content d-flex justify-content-between">
                                                 <div>
@@ -1018,21 +993,21 @@
                                                     </ul>
                                                 </div>
                                                 <div>
-                                                    <a href="" data-toggle="tooltip" data-placement="top" title="Add to Cart"><img src="../static/images/it-cart.png" alt=""></a>
+                                                    <a href="../" data-toggle="tooltip" data-placement="top" title="Add to Cart"><img src="/images/it-cart.png" alt=""></a>
                                                 </div>
                                             </div>
                                         </div>
                                         <div class="sim-item">
                                             <div class="sim-img">
-                                                <img class="main-img img-fluid" src="../static/images/tab-11.png" alt="">
-                                                <img class="sec-img img-fluid" src="../static/images/tab-16.png" alt="">
+                                                <img class="main-img img-fluid" src="/images/tab-11.png" alt="">
+                                                <img class="sec-img img-fluid" src="/images/tab-16.png" alt="">
                                                 <div class="layer-box">
-                                                    <a href="" class="it-comp" data-toggle="tooltip" data-placement="left" title="Compare"><img src="../static/images/it-comp.png" alt=""></a>
-                                                    <a href="" class="it-fav" data-toggle="tooltip" data-placement="left" title="Favourite"><img src="../static/images/it-fav.png" alt=""></a>
+                                                    <a href="../" class="it-comp" data-toggle="tooltip" data-placement="left" title="Compare"><img src="/images/it-comp.png" alt=""></a>
+                                                    <a href="../" class="it-fav" data-toggle="tooltip" data-placement="left" title="Favourite"><img src="/images/it-fav.png" alt=""></a>
                                                 </div>
                                             </div>
                                             <div class="sim-heading">
-                                                <p><a href="">Item Title Here</a></p>
+                                                <p><a href="../">Item Title Here</a></p>
                                             </div>
                                             <div class="img-content d-flex justify-content-between">
                                                 <div>
@@ -1049,21 +1024,21 @@
                                                     </ul>
                                                 </div>
                                                 <div>
-                                                    <a href="" data-toggle="tooltip" data-placement="top" title="Add to Cart"><img src="../static/images/it-cart.png" alt=""></a>
+                                                    <a href="../" data-toggle="tooltip" data-placement="top" title="Add to Cart"><img src="/images/it-cart.png" alt=""></a>
                                                 </div>
                                             </div>
                                         </div>
                                         <div class="sim-item">
                                             <div class="sim-img">
-                                                <img class="main-img img-fluid" src="../static/images/tab-7.png" alt="">
-                                                <img class="sec-img img-fluid" src="../static/images/tab-16.png" alt="">
+                                                <img class="main-img img-fluid" src="/images/tab-7.png" alt="">
+                                                <img class="sec-img img-fluid" src="/images/tab-16.png" alt="">
                                                 <div class="layer-box">
-                                                    <a href="" class="it-comp" data-toggle="tooltip" data-placement="left" title="Compare"><img src="../static/images/it-comp.png" alt=""></a>
-                                                    <a href="" class="it-fav" data-toggle="tooltip" data-placement="left" title="Favourite"><img src="../static/images/it-fav.png" alt=""></a>
+                                                    <a href="../" class="it-comp" data-toggle="tooltip" data-placement="left" title="Compare"><img src="/images/it-comp.png" alt=""></a>
+                                                    <a href="../" class="it-fav" data-toggle="tooltip" data-placement="left" title="Favourite"><img src="/images/it-fav.png" alt=""></a>
                                                 </div>
                                             </div>
                                             <div class="sim-heading">
-                                                <p><a href="">Item Title Here</a></p>
+                                                <p><a href="../">Item Title Here</a></p>
                                             </div>
                                             <div class="img-content d-flex justify-content-between">
                                                 <div>
@@ -1080,21 +1055,21 @@
                                                     </ul>
                                                 </div>
                                                 <div>
-                                                    <a href="" data-toggle="tooltip" data-placement="top" title="Add to Cart"><img src="../static/images/it-cart.png" alt=""></a>
+                                                    <a href="../" data-toggle="tooltip" data-placement="top" title="Add to Cart"><img src="/images/it-cart.png" alt=""></a>
                                                 </div>
                                             </div>
                                         </div>
                                         <div class="sim-item">
                                             <div class="sim-img">
-                                                <img class="main-img img-fluid" src="../static/images/tab-9.png" alt="">
-                                                <img class="sec-img img-fluid" src="../static/images/tab-16.png" alt="">
+                                                <img class="main-img img-fluid" src="/images/tab-9.png" alt="">
+                                                <img class="sec-img img-fluid" src="/images/tab-16.png" alt="">
                                                 <div class="layer-box">
-                                                    <a href="" class="it-comp" data-toggle="tooltip" data-placement="left" title="Compare"><img src="../static/images/it-comp.png" alt=""></a>
-                                                    <a href="" class="it-fav" data-toggle="tooltip" data-placement="left" title="Favourite"><img src="../static/images/it-fav.png" alt=""></a>
+                                                    <a href="../" class="it-comp" data-toggle="tooltip" data-placement="left" title="Compare"><img src="/images/it-comp.png" alt=""></a>
+                                                    <a href="../" class="it-fav" data-toggle="tooltip" data-placement="left" title="Favourite"><img src="/images/it-fav.png" alt=""></a>
                                                 </div>
                                             </div>
                                             <div class="sim-heading">
-                                                <p><a href="">Item Title Here</a></p>
+                                                <p><a href="../">Item Title Here</a></p>
                                             </div>
                                             <div class="img-content d-flex justify-content-between">
                                                 <div>
@@ -1111,21 +1086,21 @@
                                                     </ul>
                                                 </div>
                                                 <div>
-                                                    <a href="" data-toggle="tooltip" data-placement="top" title="Add to Cart"><img src="../static/images/it-cart.png" alt=""></a>
+                                                    <a href="../" data-toggle="tooltip" data-placement="top" title="Add to Cart"><img src="/images/it-cart.png" alt=""></a>
                                                 </div>
                                             </div>
                                         </div>
                                         <div class="sim-item">
                                             <div class="sim-img">
-                                                <img class="main-img img-fluid" src="../static/images/tab-13.png" alt="">
-                                                <img class="sec-img img-fluid" src="../static/images/tab-16.png" alt="">
+                                                <img class="main-img img-fluid" src="/images/tab-13.png" alt="">
+                                                <img class="sec-img img-fluid" src="/images/tab-16.png" alt="">
                                                 <div class="layer-box">
-                                                    <a href="" class="it-comp" data-toggle="tooltip" data-placement="left" title="Compare"><img src="../static/images/it-comp.png" alt=""></a>
-                                                    <a href="" class="it-fav" data-toggle="tooltip" data-placement="left" title="Favourite"><img src="../static/images/it-fav.png" alt=""></a>
+                                                    <a href="../" class="it-comp" data-toggle="tooltip" data-placement="left" title="Compare"><img src="/images/it-comp.png" alt=""></a>
+                                                    <a href="../" class="it-fav" data-toggle="tooltip" data-placement="left" title="Favourite"><img src="/images/it-fav.png" alt=""></a>
                                                 </div>
                                             </div>
                                             <div class="sim-heading">
-                                                <p><a href="">Item Title Here</a></p>
+                                                <p><a href="../">Item Title Here</a></p>
                                             </div>
                                             <div class="img-content d-flex justify-content-between">
                                                 <div>
@@ -1142,7 +1117,7 @@
                                                     </ul>
                                                 </div>
                                                 <div>
-                                                    <a href="" data-toggle="tooltip" data-placement="top" title="Add to Cart"><img src="../static/images/it-cart.png" alt=""></a>
+                                                    <a href="../" data-toggle="tooltip" data-placement="top" title="Add to Cart"><img src="/images/it-cart.png" alt=""></a>
                                                 </div>
                                             </div>
                                         </div>
@@ -1160,7 +1135,7 @@
                             <div id="accordion">
                                 <div class="card">
                                     <div class="card-header">
-                                        <a href="" data-toggle="collapse" data-target="#collapse1">
+                                        <a href="../" data-toggle="collapse" data-target="#collapse1">
                                             <span>Clothing</span>
                                             <i class="fa fa-angle-down"></i>
                                         </a>
@@ -1168,17 +1143,17 @@
                                     <div id="collapse1" class="collapse">
                                         <div class="card-body">
                                             <ul class="list-unstyled">
-                                                <li><a href=""><i class="fa fa-angle-right"></i> Catagory 1</a></li>
-                                                <li><a href=""><i class="fa fa-angle-right"></i> Catagory 2</a></li>
-                                                <li><a href=""><i class="fa fa-angle-right"></i> Catagory 3</a></li>
-                                                <li><a href=""><i class="fa fa-angle-right"></i> Catagory 4</a></li>
+                                                <li><a href="../"><i class="fa fa-angle-right"></i> Catagory 1</a></li>
+                                                <li><a href="../"><i class="fa fa-angle-right"></i> Catagory 2</a></li>
+                                                <li><a href="../"><i class="fa fa-angle-right"></i> Catagory 3</a></li>
+                                                <li><a href="../"><i class="fa fa-angle-right"></i> Catagory 4</a></li>
                                             </ul>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="card">
                                     <div class="card-header">
-                                        <a href="" data-toggle="collapse" data-target="#collapse2">
+                                        <a href="../" data-toggle="collapse" data-target="#collapse2">
                                             <span>Electronics</span>
                                             <i class="fa fa-angle-down"></i>
                                         </a>
@@ -1186,17 +1161,17 @@
                                     <div id="collapse2" class="collapse">
                                         <div class="card-body">
                                             <ul class="list-unstyled">
-                                                <li><a href=""><i class="fa fa-angle-right"></i> Catagory 1</a></li>
-                                                <li><a href=""><i class="fa fa-angle-right"></i> Catagory 2</a></li>
-                                                <li><a href=""><i class="fa fa-angle-right"></i> Catagory 3</a></li>
-                                                <li><a href=""><i class="fa fa-angle-right"></i> Catagory 4</a></li>
+                                                <li><a href="../"><i class="fa fa-angle-right"></i> Catagory 1</a></li>
+                                                <li><a href="../"><i class="fa fa-angle-right"></i> Catagory 2</a></li>
+                                                <li><a href="../"><i class="fa fa-angle-right"></i> Catagory 3</a></li>
+                                                <li><a href="../"><i class="fa fa-angle-right"></i> Catagory 4</a></li>
                                             </ul>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="card">
                                     <div class="card-header">
-                                        <a href="" data-toggle="collapse" data-target="#collapse3">
+                                        <a href="../" data-toggle="collapse" data-target="#collapse3">
                                             <span>Home Appliance</span>
                                             <i class="fa fa-angle-down"></i>
                                         </a>
@@ -1204,17 +1179,17 @@
                                     <div id="collapse3" class="collapse">
                                         <div class="card-body">
                                             <ul class="list-unstyled">
-                                                <li><a href=""><i class="fa fa-angle-right"></i> Catagory 1</a></li>
-                                                <li><a href=""><i class="fa fa-angle-right"></i> Catagory 2</a></li>
-                                                <li><a href=""><i class="fa fa-angle-right"></i> Catagory 3</a></li>
-                                                <li><a href=""><i class="fa fa-angle-right"></i> Catagory 4</a></li>
+                                                <li><a href="../"><i class="fa fa-angle-right"></i> Catagory 1</a></li>
+                                                <li><a href="../"><i class="fa fa-angle-right"></i> Catagory 2</a></li>
+                                                <li><a href="../"><i class="fa fa-angle-right"></i> Catagory 3</a></li>
+                                                <li><a href="../"><i class="fa fa-angle-right"></i> Catagory 4</a></li>
                                             </ul>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="card">
                                     <div class="card-header">
-                                        <a href="" data-toggle="collapse" data-target="#collapse4">
+                                        <a href="../" data-toggle="collapse" data-target="#collapse4">
                                             <span>Smartphone</span>
                                             <i class="fa fa-angle-down"></i>
                                         </a>
@@ -1222,17 +1197,17 @@
                                     <div id="collapse4" class="collapse">
                                         <div class="card-body">
                                             <ul class="list-unstyled">
-                                                <li><a href=""><i class="fa fa-angle-right"></i> Catagory 1</a></li>
-                                                <li><a href=""><i class="fa fa-angle-right"></i> Catagory 2</a></li>
-                                                <li><a href=""><i class="fa fa-angle-right"></i> Catagory 3</a></li>
-                                                <li><a href=""><i class="fa fa-angle-right"></i> Catagory 4</a></li>
+                                                <li><a href="../"><i class="fa fa-angle-right"></i> Catagory 1</a></li>
+                                                <li><a href="../"><i class="fa fa-angle-right"></i> Catagory 2</a></li>
+                                                <li><a href="../"><i class="fa fa-angle-right"></i> Catagory 3</a></li>
+                                                <li><a href="../"><i class="fa fa-angle-right"></i> Catagory 4</a></li>
                                             </ul>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="card">
                                     <div class="card-header">
-                                        <a href="" data-toggle="collapse" data-target="#collapse5">
+                                        <a href="../" data-toggle="collapse" data-target="#collapse5">
                                             <span>Computer</span>
                                             <i class="fa fa-angle-down"></i>
                                         </a>
@@ -1240,17 +1215,17 @@
                                     <div id="collapse5" class="collapse">
                                         <div class="card-body">
                                             <ul class="list-unstyled">
-                                                <li><a href=""><i class="fa fa-angle-right"></i> Catagory 1</a></li>
-                                                <li><a href=""><i class="fa fa-angle-right"></i> Catagory 2</a></li>
-                                                <li><a href=""><i class="fa fa-angle-right"></i> Catagory 3</a></li>
-                                                <li><a href=""><i class="fa fa-angle-right"></i> Catagory 4</a></li>
+                                                <li><a href="../"><i class="fa fa-angle-right"></i> Catagory 1</a></li>
+                                                <li><a href="../"><i class="fa fa-angle-right"></i> Catagory 2</a></li>
+                                                <li><a href="../"><i class="fa fa-angle-right"></i> Catagory 3</a></li>
+                                                <li><a href="../"><i class="fa fa-angle-right"></i> Catagory 4</a></li>
                                             </ul>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="card">
                                     <div class="card-header">
-                                        <a href="" data-toggle="collapse" data-target="#collapse6">
+                                        <a href="../" data-toggle="collapse" data-target="#collapse6">
                                             <span>Kids Collection</span>
                                             <i class="fa fa-angle-down"></i>
                                         </a>
@@ -1258,17 +1233,17 @@
                                     <div id="collapse6" class="collapse">
                                         <div class="card-body">
                                             <ul class="list-unstyled">
-                                                <li><a href=""><i class="fa fa-angle-right"></i> Catagory 1</a></li>
-                                                <li><a href=""><i class="fa fa-angle-right"></i> Catagory 2</a></li>
-                                                <li><a href=""><i class="fa fa-angle-right"></i> Catagory 3</a></li>
-                                                <li><a href=""><i class="fa fa-angle-right"></i> Catagory 4</a></li>
+                                                <li><a href="../"><i class="fa fa-angle-right"></i> Catagory 1</a></li>
+                                                <li><a href="../"><i class="fa fa-angle-right"></i> Catagory 2</a></li>
+                                                <li><a href="../"><i class="fa fa-angle-right"></i> Catagory 3</a></li>
+                                                <li><a href="../"><i class="fa fa-angle-right"></i> Catagory 4</a></li>
                                             </ul>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="card">
                                     <div class="card-header">
-                                        <a href="" data-toggle="collapse" data-target="#collapse7">
+                                        <a href="../" data-toggle="collapse" data-target="#collapse7">
                                             <span>Automobile</span>
                                             <i class="fa fa-angle-down"></i>
                                         </a>
@@ -1276,10 +1251,10 @@
                                     <div id="collapse7" class="collapse">
                                         <div class="card-body">
                                             <ul class="list-unstyled">
-                                                <li><a href=""><i class="fa fa-angle-right"></i> Catagory 1</a></li>
-                                                <li><a href=""><i class="fa fa-angle-right"></i> Catagory 2</a></li>
-                                                <li><a href=""><i class="fa fa-angle-right"></i> Catagory 3</a></li>
-                                                <li><a href=""><i class="fa fa-angle-right"></i> Catagory 4</a></li>
+                                                <li><a href="../"><i class="fa fa-angle-right"></i> Catagory 1</a></li>
+                                                <li><a href="../"><i class="fa fa-angle-right"></i> Catagory 2</a></li>
+                                                <li><a href="../"><i class="fa fa-angle-right"></i> Catagory 3</a></li>
+                                                <li><a href="../"><i class="fa fa-angle-right"></i> Catagory 4</a></li>
                                             </ul>
                                         </div>
                                     </div>
@@ -1293,7 +1268,7 @@
                             <div class="ht-body owl-carousel">
                                 <div class="ht-item">
                                     <div class="ht-img">
-                                        <a href="#"><img src="../static/images/tab-15.png" alt="" class="img-fluid"></a>
+                                        <a href="../#"><img src="/images/tab-15.png" alt="" class="img-fluid"></a>
                                         <span>- 59%</span>
                                         <ul class="list-unstyled list-inline counter-box">
                                             <li class="list-inline-item">185 <p>Days</p></li>
@@ -1303,7 +1278,7 @@
                                         </ul>
                                     </div>
                                     <div class="ht-content">
-                                        <p><a href="">Items Title Name Enter Here</a></p>
+                                        <p><a href="../">Items Title Name Enter Here</a></p>
                                         <ul class="list-unstyled list-inline fav">
                                             <li class="list-inline-item"><i class="fa fa-star"></i></li>
                                             <li class="list-inline-item"><i class="fa fa-star"></i></li>
@@ -1319,7 +1294,7 @@
                                 </div>
                                 <div class="ht-item">
                                     <div class="ht-img">
-                                        <a href="#"><img src="../static/images/tab-14.png" alt="" class="img-fluid"></a>
+                                        <a href="../#"><img src="/images/tab-14.png" alt="" class="img-fluid"></a>
                                         <span>- 59%</span>
                                         <ul class="list-unstyled list-inline counter-box">
                                             <li class="list-inline-item">185 <p>Days</p></li>
@@ -1329,7 +1304,7 @@
                                         </ul>
                                     </div>
                                     <div class="ht-content">
-                                        <p><a href="">Items Title Name Enter Here</a></p>
+                                        <p><a href="../">Items Title Name Enter Here</a></p>
                                         <ul class="list-unstyled list-inline fav">
                                             <li class="list-inline-item"><i class="fa fa-star"></i></li>
                                             <li class="list-inline-item"><i class="fa fa-star"></i></li>
@@ -1346,7 +1321,7 @@
                             </div>
                         </div>
                         <div class="add-box">
-                            <a href=""><img src="../static/images/s-banner1.jpg" alt="" class="img-fluid"></a>
+                            <a href="../"><img src="/images/s-banner1.jpg" alt="" class="img-fluid"></a>
                         </div>
                     </div>
                 </div>
@@ -1378,11 +1353,11 @@
                             </div>
                             <div class="f-social">
                                 <ul class="list-unstyled list-inline">
-                                    <li class="list-inline-item"><a href=""><i class="fa fa-facebook"></i></a></li>
-                                    <li class="list-inline-item"><a href=""><i class="fa fa-twitter"></i></a></li>
-                                    <li class="list-inline-item"><a href=""><i class="fa fa-linkedin"></i></a></li>
-                                    <li class="list-inline-item"><a href=""><i class="fa fa-google-plus"></i></a></li>
-                                    <li class="list-inline-item"><a href=""><i class="fa fa-pinterest"></i></a></li>
+                                    <li class="list-inline-item"><a href="../"><i class="fa fa-facebook"></i></a></li>
+                                    <li class="list-inline-item"><a href="../"><i class="fa fa-twitter"></i></a></li>
+                                    <li class="list-inline-item"><a href="../"><i class="fa fa-linkedin"></i></a></li>
+                                    <li class="list-inline-item"><a href="../"><i class="fa fa-google-plus"></i></a></li>
+                                    <li class="list-inline-item"><a href="../"><i class="fa fa-pinterest"></i></a></li>
                                 </ul>
                             </div>
                         </div>
@@ -1391,13 +1366,13 @@
                         <div class="f-cat">
                             <h5>Categories</h5>
                             <ul class="list-unstyled">
-                                <li><a href=""><i class="fa fa-angle-right"></i>Clothing</a></li>
-                                <li><a href=""><i class="fa fa-angle-right"></i>Electronics</a></li>
-                                <li><a href=""><i class="fa fa-angle-right"></i>Smartphones & Tablets</a></li>
-                                <li><a href=""><i class="fa fa-angle-right"></i>Computer & Office</a></li>
-                                <li><a href=""><i class="fa fa-angle-right"></i>Home Appliances</a></li>
-                                <li><a href=""><i class="fa fa-angle-right"></i>Leather & Shoes</a></li>
-                                <li><a href=""><i class="fa fa-angle-right"></i>Kids & Babies</a></li>
+                                <li><a href="../"><i class="fa fa-angle-right"></i>Clothing</a></li>
+                                <li><a href="../"><i class="fa fa-angle-right"></i>Electronics</a></li>
+                                <li><a href="../"><i class="fa fa-angle-right"></i>Smartphones & Tablets</a></li>
+                                <li><a href="../"><i class="fa fa-angle-right"></i>Computer & Office</a></li>
+                                <li><a href="../"><i class="fa fa-angle-right"></i>Home Appliances</a></li>
+                                <li><a href="../"><i class="fa fa-angle-right"></i>Leather & Shoes</a></li>
+                                <li><a href="../"><i class="fa fa-angle-right"></i>Kids & Babies</a></li>
                             </ul>
                         </div>
                     </div>
@@ -1405,13 +1380,13 @@
                         <div class="f-link">
                             <h5>Quick Links</h5>
                             <ul class="list-unstyled">
-                                <li><a href=""><i class="fa fa-angle-right"></i>My Account</a></li>
-                                <li><a href=""><i class="fa fa-angle-right"></i>Shopping Cart</a></li>
-                                <li><a href=""><i class="fa fa-angle-right"></i>My Wishlist</a></li>
-                                <li><a href=""><i class="fa fa-angle-right"></i>Checkout</a></li>
-                                <li><a href=""><i class="fa fa-angle-right"></i>Order History</a></li>
-                                <li><a href=""><i class="fa fa-angle-right"></i>Log In</a></li>
-                                <li><a href=""><i class="fa fa-angle-right"></i>Our Locations</a></li>
+                                <li><a href="../"><i class="fa fa-angle-right"></i>My Account</a></li>
+                                <li><a href="../"><i class="fa fa-angle-right"></i>Shopping Cart</a></li>
+                                <li><a href="../"><i class="fa fa-angle-right"></i>My Wishlist</a></li>
+                                <li><a href="../"><i class="fa fa-angle-right"></i>Checkout</a></li>
+                                <li><a href="../"><i class="fa fa-angle-right"></i>Order History</a></li>
+                                <li><a href="../"><i class="fa fa-angle-right"></i>Log In</a></li>
+                                <li><a href="../"><i class="fa fa-angle-right"></i>Our Locations</a></li>
                             </ul>
                         </div>
                     </div>
@@ -1419,13 +1394,13 @@
                         <div class="f-sup">
                             <h5>Support</h5>
                             <ul class="list-unstyled">
-                                <li><a href=""><i class="fa fa-angle-right"></i>Contact Us</a></li>
-                                <li><a href=""><i class="fa fa-angle-right"></i>Payment Policy</a></li>
-                                <li><a href=""><i class="fa fa-angle-right"></i>Return Policy</a></li>
-                                <li><a href=""><i class="fa fa-angle-right"></i>Privacy Policy</a></li>
-                                <li><a href=""><i class="fa fa-angle-right"></i>Frequently asked questions</a></li>
-                                <li><a href=""><i class="fa fa-angle-right"></i>Terms & Condition</a></li>
-                                <li><a href=""><i class="fa fa-angle-right"></i>Delivery Info</a></li>
+                                <li><a href="../"><i class="fa fa-angle-right"></i>Contact Us</a></li>
+                                <li><a href="../"><i class="fa fa-angle-right"></i>Payment Policy</a></li>
+                                <li><a href="../"><i class="fa fa-angle-right"></i>Return Policy</a></li>
+                                <li><a href="../"><i class="fa fa-angle-right"></i>Privacy Policy</a></li>
+                                <li><a href="../"><i class="fa fa-angle-right"></i>Frequently asked questions</a></li>
+                                <li><a href="../"><i class="fa fa-angle-right"></i>Terms & Condition</a></li>
+                                <li><a href="../"><i class="fa fa-angle-right"></i>Delivery Info</a></li>
                             </ul>
                         </div>
                     </div>
@@ -1436,15 +1411,15 @@
             <div class="container">
                 <div class="row">
                     <div class="col-md-6">
-                        <p>Copyright &copy; 2020 | Designed With <i class="fa fa-heart"></i> by <a href="#" target="_blank">SnazzyTheme</a></p>
+                        <p>Copyright &copy; 2020 | Designed With <i class="fa fa-heart"></i> by <a href="../#" target="_blank">SnazzyTheme</a></p>
                     </div>
                     <div class="col-md-6 text-right">
-                        <img src="../static/images/payment.png" alt="" class="img-fluid">
+                        <img src="/images/payment.png" alt="" class="img-fluid">
                     </div>
                 </div>
             </div>
             <div class="back-to-top text-center">
-                <img src="../static/images/backtotop.png" alt="" class="img-fluid">
+                <img src="/images/backtotop.png" alt="" class="img-fluid">
             </div>
         </section>
         <!-- End Footer Area -->
@@ -1455,27 +1430,27 @@
         ========================================== -->
 
         <!-- jQuery JS -->
-        <script src="../static/js/assets/vendor/jquery-1.12.4.min.js"></script>
+        <script src="/js/assets/vendor/jquery-1.12.4.min.js"></script>
 
         <!-- Bootstrap -->
-        <script src="../static/js/assets/popper.min.js"></script>
-        <script src="../static/js/assets/bootstrap.min.js"></script>
+        <script src="/js/assets/popper.min.js"></script>
+        <script src="/js/assets/bootstrap.min.js"></script>
 
         <!-- Owl Slider -->
-        <script src="../static/js/assets/owl.carousel.min.js"></script>
+        <script src="/js/assets/owl.carousel.min.js"></script>
 
         <!-- Wow Animation -->
-        <script src="../static/js/assets/wow.min.js"></script>
+        <script src="/js/assets/wow.min.js"></script>
 
         <!-- Price Filter -->
-        <script src="../static/js/assets/price-filter.js"></script>
+        <script src="/js/assets/price-filter.js"></script>
 
         <!-- Mean Menu -->
-        <script src="../static/js/assets/jquery.meanmenu.min.js"></script>
+        <script src="/js/assets/jquery.meanmenu.min.js"></script>
 
         <!-- Custom JS -->
-        <script src="../static/js/plugins.js"></script>
-        <script src="../static/js/custom.js"></script>
+        <script src="/js/plugins.js"></script>
+        <script src="/js/custom.js"></script>
 
     </body>
 </html>

@@ -36,7 +36,6 @@ public class SpringSecurityConfig {
                 .requestMatchers("/css/**").permitAll()
                 .requestMatchers("/js/**").permitAll()
                 .requestMatchers("/images/**").permitAll()
-                .requestMatchers("/products/**").hasAnyAuthority("ADMIN", "CUSTOMER")
                 .requestMatchers("/admin").permitAll()
                 .anyRequest().authenticated()
                 .and()
